@@ -7,7 +7,7 @@ function changeColor(){
     var div1 = document.getElementById("div1");
     div1.style.backgroundColor = color;
 }
-
+    
 
 $(document).ready(function(){
     console.log("step 1, ready");
