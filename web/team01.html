@@ -3,18 +3,8 @@
     <head>
         <title>Team Assignment 01</title>
         <link rel="stylesheet" type="text/css" href="team01.css">
-        <!--<script src="team01.js"></script>-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            console.log("step 1, ready");
-            $("#jQcolorChanger").click(function(){
-                console.log("step 2, clicked");
-                $("#div1").css("background-color", $("input").val());
-                console.log("step 3, changed color");
-            });
-        });
-    </script>
+        <script src="team01.js"></script>
     </head>
     <body>
         <div id="container">
@@ -25,5 +15,6 @@
         <button onclick="alertClick()">Click Me</button>
         Div 1 color selection: <input type="text" value="" id="colorChoice">
         <button id="jQcolorChanger">Change Color</button>
+        <button id="jQfadeToggle">Fade Div 3</button>
     </body>
 </html>

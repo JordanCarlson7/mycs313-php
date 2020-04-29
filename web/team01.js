@@ -7,3 +7,17 @@ function changeColor(){
     var div1 = document.getElementById("div1");
     div1.style.backgroundColor = color;
 }
+
+
+$(document).ready(function(){
+    console.log("step 1, ready");
+    $("#jQcolorChanger").click(function(){
+        console.log("step 2, clicked");
+        $("#div1").css("background-color", $("input").val());
+        console.log("step 3, changed color");
+    });
+
+    $("#jqfadeToggle").click(function(){
+        $("#div3").fadeToggle(1000);
+    });
+});
