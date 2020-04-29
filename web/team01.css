@@ -1,17 +1,21 @@
 .container {
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    width: 100%;
+    flex-direction:row;
+    max-width: 100%;
+    align-content:center;
+    justify-content:center;
+    background-color:black;
+    border-style:solid;
+    border-color:blue;
 }
 .contained {
+    display: flex;
     width: 33.33%;
     justify-content: center;
     align-content: center;
-
 }
 
-.contained :hover{
+.contained:hover{
     font-weight: bold;
 }
 
