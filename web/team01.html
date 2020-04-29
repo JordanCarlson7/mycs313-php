@@ -10,8 +10,8 @@
             console.log("step 1, ready");
             $("#jQcolorChanger").click(function(){
                 console.log("step 2, clicked");
-                $("div1").css("background-color", "black");
-                console.log("step 3, changed color to black");
+                $("#div1").css("background-color", $("input").val());
+                console.log("step 3, changed color");
             });
         });
     </script>
