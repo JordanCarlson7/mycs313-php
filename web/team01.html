@@ -4,6 +4,15 @@
         <title>Team Assignment 01</title>
         <link rel="stylesheet" type="text/css" href="team01.css">
         <script src="team01.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            $("#jQcolorChanger").click(function(){
+                $("div1").css("background-color", $("input").val());
+            });
+        });
+    </script>
     </head>
     <body>
         <div id="container">
@@ -13,6 +22,6 @@
         </div>
         <button onclick="alertClick()">Click Me</button>
         Div 1 color selection: <input type="text" value="" id="colorChoice">
-        <button onclick="changeColor()">Change Color</button>
+        <button id="jQcolorChanger">Change Color</button>
     </body>
 </html>
