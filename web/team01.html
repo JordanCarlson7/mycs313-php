@@ -7,8 +7,11 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
         $(document).ready(function(){
+            console.log("step 1, ready");
             $("#jQcolorChanger").click(function(){
+                console.log("step 2, clicked");
                 $("div1").css("background-color", "black");
+                console.log("step 3, changed color to black");
             });
         });
     </script>
