@@ -15,17 +15,16 @@ $(document).ready(function(){
     $("#jQcolorChanger").click(function(){
         console.log("step 2, clicked");
 
-        /*Bootstrap color change CHANGES CLASS*/
+        /*Bootstrap color change CHANGES CLASS
         var div1Class = $("#div1").attr("class");
         console.log(div1Class);
         var newBackground = $("input").val();
-        $("#div1").removeClass("bg\S+")
+        $("#div1").removeClass("bg-")
         $("#div1").addClass( "bg-" + newBackground);
-
-
-        /*Non Bootstrap background color change
-        $("#div1").css("background-color", $("input").val());
         */
+
+        //Non Bootstrap background color change
+        $("#div1").css("background-color", $("input").val());
         console.log("step 3, changed color");
     });
 
