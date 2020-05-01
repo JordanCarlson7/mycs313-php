@@ -1,0 +1,12 @@
+img{
+    max-width: 100%;
+    box-shadow: 2px 2px 2px black;
+}
+
+img .side{
+margin-top: 10%;
+}
+
+h1{
+    text-align: right;
+}
