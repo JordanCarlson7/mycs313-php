@@ -37,10 +37,10 @@
 
         <div class="row bg-dark flex-wrap" id="text">
             <div class="col">
-                <p class="text-justify">Hobbies include: Soccer, Guitar, and Photography</p>
+                <p class="text-justify">Hobbies include: Soccer, Guitar, Photography, and Camping</p>
             </div>
             <div class="col">
-                <p class="font-weight-bold text-justify text-lead">Hello, My name is Jordan Carlson an i love the outdoors and traveling. Hawaii is on of my favorite places to go.</p>
+                <p class="font-weight-bold text-justify text-lead">Hello, My name is Jordan Carlson and i love the outdoors and traveling. Hawaii is on of my favorite places to go.</p>
             </div>
             <div class="col">
                 <p class="text-justify">I am interested in the field of Web Site Design and A.I. but would rather spend time in the outdoors with friends and family or working on fun random projects</p>

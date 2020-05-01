@@ -19,16 +19,17 @@ img {
 
 .row, nav, h1{
     margin:1%;
+
 }
 
 h1{
     text-align: right;
-    color:#A93226;
+    color:#E74C3C ;
     text-shadow: 2px 3px 10px black;
 }
 
 a{
-    color:#A93226;
+    color:#E74C3C;
 }
 
 a:hover{
@@ -37,7 +38,7 @@ a:hover{
 
 
 p{
-    color:#A93226;
+    color:#E74C3C;
     padding: 2%;
 }
 
@@ -56,4 +57,12 @@ th {
 td{
     padding:5%;
     
+}
+
+nav{
+    border-radius: 10px
+}
+
+.row{
+    border-radius: 10px;
 }
