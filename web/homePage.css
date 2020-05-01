@@ -1,8 +1,9 @@
 body{
     background-color: #1A5276;
+    font-family:sans-serif;
 }
 
-img center{
+img #center{
     max-width: 100%;
     box-shadow: 2px 2px 2px black;
 }
@@ -10,6 +11,10 @@ img center{
 img {
     max-width: 100%;
     box-shadow: 2px 2px 20px black;
+}
+
+.float-right, .float-left{
+    margin-top:16%;
 }
 
 .row, nav, h1{
