@@ -48,11 +48,12 @@ table{
     color: white;
     box-shadow:2px 2px 30px white;
     border-radius: 10px;
-
+    width: 50%;
 }
 th {
     text-align:center;
 }
 td{
     padding:5%;
+    
 }
