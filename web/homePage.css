@@ -1,5 +1,5 @@
 body{
-    background-color: #1A5276;
+    background-color: #1e4258;
     font-family:sans-serif;
 }
 
@@ -24,19 +24,28 @@ img {
 h1{
     text-align: right;
     color:#A93226;
+    text-shadow: 2px 3px 10px black;
 }
 
 a{
     color:#A93226;
 }
+
+a:hover{
+    color:white;
+}
+
+
 p{
     color:#A93226;
+    padding: 2%;
 }
 
 table{
     margin:auto;
     margin-top: 2%;
     background-color: #2E4053;
+    color: white;
     box-shadow:2px 2px 30px white;
     border-radius: 10px;
 
