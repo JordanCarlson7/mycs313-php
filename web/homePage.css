@@ -1,12 +1,26 @@
-img .mx-auto{
+body{
+    
+    background-color: #1A5276;
+}
+
+img center{
     max-width: 100%;
     box-shadow: 2px 2px 2px black;
 }
 
-img .side{
-margin-top: 10%;
+img .mx-auto{
+    max-width: 100%;
+    
 }
 
 h1{
     text-align: right;
+    color:#A93226;
+}
+
+a{
+    color:#A93226;
+}
+p{
+    color:#A93226;
 }
