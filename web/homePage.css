@@ -1,5 +1,4 @@
 body{
-    
     background-color: #1A5276;
 }
 
@@ -8,9 +7,13 @@ img center{
     box-shadow: 2px 2px 2px black;
 }
 
-img .mx-auto{
+img {
     max-width: 100%;
-    
+    box-shadow: 2px 2px 20px black;
+}
+
+.row, nav, h1{
+    margin:1%;
 }
 
 h1{
