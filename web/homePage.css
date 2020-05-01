@@ -32,3 +32,18 @@ a{
 p{
     color:#A93226;
 }
+
+table{
+    margin:auto;
+    margin-top: 2%;
+    background-color: #2E4053;
+    box-shadow:2px 2px 30px white;
+    border-radius: 10px;
+
+}
+th {
+    text-align:center;
+}
+td{
+    padding:5%;
+}
