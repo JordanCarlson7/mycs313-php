@@ -1,5 +1,5 @@
 <?php
-// create a PHP object with the filename,filetype, and cwd properties.
+     // create a PHP object with the filename,filetype, and cwd properties.
      class fileN
      {
         public $fileName;
@@ -13,19 +13,6 @@
      $files = scandir($folder);
      $directory = Array();     // create a array object to store a list of objects.
 
-     /*******************************************************************************
-     *  Start your PHP code here!
-     *
-     * Add code to populate the "$directory" array with a list of "fileN" objects.
-     * Use "new fileN()" to create a fileN object.    $directory[$i] = new fileN();
-     * Set each fileN object property to the appropriate values.
-     * You can get each file name from the "$files" array.
-     * You can get each file type by calling the php function "filetype()" passing it the filename.
-     * The "filetype()" function returns the file type. The returned file type is either "file" or "dir".  
-     * The current working directory has been stored in $cwd.
-     * To get the size of an array in php use the sizeof function:  $len = sizeof($files);
-     *****************************************************************/
-
      $len = sizeof($files);
      for ($i = 0; $i < $len; $i++){
          $directory[$i] = new fileN();
@@ -33,8 +20,6 @@
          $directory[$i]->fileType =  fileType($files[$i]);//"file";//
          $directory[$i]->cwd = $cwd;//"/home/joh0801/public_html/";*/
      }
-
-     /*******************End of your Code *******************************************/
 
      // convert the PHP array of objects to a JSON string
      $str = json_encode($directory);
