@@ -1,10 +1,12 @@
 <?php
+session_start();
 
 class Item {
     public $name;
     public $price;
     public $description;
     public $imgfile;
+    public $checked;
 }
 
 $boat = new Item();
@@ -12,24 +14,29 @@ $boat->name = "boat";
 $boat->price = "8000";
 $boat->description = "Large personal yacht for friends and family";
 $boat->imgfile = "yacht.jpg";
+$boat->checked = false;
+
 
 $plane = new Item();
 $plane->name = "plane";
 $plane->price = "15000";
 $plane->description = "Small bush plane for leisure and travel";
 $plane->imgfile = "biPlane.jpg";
+$plane->checked = false;
 
 $guitar = new Item();
 $guitar->name = "guitar";
 $guitar->price = "3000";
 $guitar->description = "Jam out and become a rock star or family band-member";
 $guitar->imgfile = "guitar.jpg";
+$guitar->checked = false;
 
 $soda = new Item();
 $soda->name = "soda";
 $soda->price = "1";
 $soda->description = "sit back and enjoy a refreshing beverage";
 $soda->imgfile = "sodaBottle.jpg";
+$soda->checked = false;
 
 $items = [
     "Boat" => $boat,
@@ -48,6 +55,7 @@ $items = [
         <link rel="stylesheet" type="text/css" href="shoppingCart.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="shoppingCart.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 <header class="display-1">Title</header>
@@ -66,7 +74,7 @@ $items = [
             <?= $item . ", $" . $obj->price ?>
             <p> <?= $obj->description ?></p>
             <img src="<?= $obj->imgfile ?>" alt="<?= $item ?>">
-            <button type="button" id="<? $item . $obj->price ?>" onclick="addToCart()" class="bg-dark">Add To Cart</button>
+            <button type="button" id="<?$item?>" onclick="" class="bg-dark">Add To Cart</button>
         </div>
     </div>
     <?php endforeach;?>
