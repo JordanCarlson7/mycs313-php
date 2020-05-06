@@ -59,7 +59,7 @@ $items = [
     <a href="#">5</a>
 </nav> 
 <div class="row">
-    <div class="col lg"></div>
+    <div class="col lg">
     <?php foreach ($items as $item => $obj):?>
         <div class="row" id="<?= $item ?>" name="<?= $item ?>" value="<?= $obg->price ?>">
         <div>
@@ -70,8 +70,10 @@ $items = [
         </div>
     </div>
     <?php endforeach;?>
-    <div class="col sm"></div>
+    </div>
+    <div class="col sm">
     <button id="toCart" onclick="toCart()" class="bg-dark">
+    </div>
 </div>
 <footer class="bg-light display4">Footer</footer>
 </body>
