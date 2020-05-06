@@ -50,8 +50,8 @@ $items = [
         <script src="shoppingCart.js"></script>
 </head>
 <body>
-<header class="display1">Title</header>
-<nav class="bg-light">
+<header class="display-1">Title</header>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <a href="#">1</a>
     <a href="#">2</a>
     <a href="#">3</a>
@@ -59,22 +59,22 @@ $items = [
     <a href="#">5</a>
 </nav> 
 <div class="row">
-    <div class="col lg">
+    <div class="col-sm-8">
     <?php foreach ($items as $item => $obj):?>
         <div class="row" id="<?= $item ?>" name="<?= $item ?>" value="<?= $obg->price ?>">
         <div>
             <?= $item . ", $" . $obj->price ?>
             <p> <?= $obj->description ?></p>
             <img src="<?= $obj->imgfile ?>" alt="<?= $item ?>">
-            <button id="<? $item . $obj->price ?>" onclick="addToCart()" class="bg-dark">
+            <button type="button" id="<? $item . $obj->price ?>" onclick="addToCart()" class="bg-dark">
         </div>
     </div>
     <?php endforeach;?>
     </div>
-    <div class="col sm">
-    <button id="toCart" onclick="toCart()" class="bg-dark">
+    <div class="col-sm-4">
+    <button type="button" id="toCart" onclick="toCart()" class="bg-dark">
     </div>
 </div>
-<footer class="bg-light display4">Footer</footer>
+<footer class="bg-dark navbar-dark display-3">Footer</footer>
 </body>
 </html>
