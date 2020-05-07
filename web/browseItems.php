@@ -62,20 +62,20 @@ $items = [
 <div class="row">
     <div class="col-sm-8">
     <?php foreach ($items as $item => $obj):?>
-        <div class="row" id="<?= $item ?>" name="<?= $item ?>" value="<?= $obg->price ?>">
+        <div class="row" id="<?= $item ?>" data-description="<?= $obj->description ?>" data-price="<?= $obj->price ?>" data-imgfile="<?= $obj->imgFile ?>" data-added="<?= $obj->checked ?>">
         <div>
             <?= $item . ", $" . $obj->price ?>
             <p> <?= $obj->description ?></p>
             <img src="<?= $obj->imgfile ?>" alt="<?= $item ?>">
-            <button type="button" id="<?$item?>" onclick="" class="bg-dark">Add To Cart</button>
+            <button type="button" id="<?$item?>" onclick="addToCart(<?= $item->name?>)" class="bg-dark">Add To Cart</button>
         </div>
     </div>
     <?php endforeach;?>
     </div>
     <div class="col-sm-4">
-    <button type="button" id="toCart" onclick="toCart()" class="bg-dark">View Cart</button>
+    <a href="viewCart.php" id="toCart" class="bg-dark">View Cart</a>
     </div>
 </div>
-<?php include "footerr03.php" ?>
+<?php include "footer03.php" ?>
 </body>
 </html>
