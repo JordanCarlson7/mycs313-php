@@ -67,7 +67,7 @@ $items = [
             <?= $item . ", $" . $obj->price ?>
             <p> <?= $obj->description ?></p>
             <img src="<?= $obj->imgfile ?>" alt="<?= $item ?>">
-            <button type="button" id="<?= $item . "button" ?>" data-object="<?=$obj?>" onclick="addToCart(this)" class="bg-dark light">Add To Cart</button>
+            <button type="button" id="<?= $item . "button" ?>" data-object="<?= json_decode($obj)?>" onclick="addToCart(this)" class="bg-dark light">Add To Cart</button>
         </div>
     </div>
     <?php endforeach;?>
