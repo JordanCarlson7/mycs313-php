@@ -58,14 +58,7 @@ $items = [
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-<header class="display-1">Title</header>
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <a href="#">1</a>
-    <a href="#">2</a>
-    <a href="#">3</a>
-    <a href="#">4</a>
-    <a href="#">5</a>
-</nav> 
+<?php include "headNav03.php" ?>
 <div class="row">
     <div class="col-sm-8">
     <?php foreach ($items as $item => $obj):?>
@@ -83,6 +76,6 @@ $items = [
     <button type="button" id="toCart" onclick="toCart()" class="bg-dark">View Cart</button>
     </div>
 </div>
-<footer class="bg-dark navbar-dark display-3">Footer</footer>
+<?php include "footerr03.php" ?>
 </body>
 </html>
