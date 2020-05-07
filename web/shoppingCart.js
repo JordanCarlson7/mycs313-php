@@ -1,5 +1,12 @@
 function addToCart(itemName){
     console.log(itemName);
+    let object = document.getElementById(itemName.id);
+    let data = object.getAttribute("data-object");
+    console.log(data);
+    //let phpObj = JSON.parse(object.getAttribute("data-object"));
+    //console.log(phpObj);
+   // let obj = JSON.parse(itemName);
+    //console.log("This items: " + obj.price);
 }
 
 
