@@ -7,11 +7,11 @@ class Item {
     public $added;
 }
 session_start();
-echo "here1";
 $items = Array();
 $gettingItems = Array();
 $temp = new Item();
 $gettingItems = $_SESSION['list'];
+
 foreach($gettingItems as $name){
     $temp = $_SESSION[$name];
     
@@ -19,9 +19,7 @@ foreach($gettingItems as $name){
         $items[$name] = $temp;
     }
 }
-//$temp = $_SESSION["Boat"];
 
-echo "here";
 
 
 ?>

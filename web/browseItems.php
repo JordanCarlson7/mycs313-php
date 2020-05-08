@@ -110,7 +110,7 @@ $_SESSION["list"] = $itemNames;
     <?php endforeach;?>
     </div>
     <div class="col-sm-4">
-    <a href="viewCart.php" id="toCart" class="bg-dark light">View Cart</a>
+    <!--May not be used-->
     </div>
 </div>
 <?php include "footer03.php" ?>
