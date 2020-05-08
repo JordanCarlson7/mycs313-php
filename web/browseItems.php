@@ -43,6 +43,8 @@ $items = [
     "Guitar" => $guitar,
     "Soda" => $soda
 ];
+
+$itemNames = array("Boat", "Plane", "Guitar", "Soda");
 //Check defaults if not there then add
 if (isset($_SESSION["Boat"])){
 
@@ -74,6 +76,8 @@ if (isset($_SESSION["Soda"])){
 else {
     $_SESSION["Soda"] = $soda;
 }
+
+$_SESSION["list"] = $itemNames;
 
 
 

@@ -10,9 +10,9 @@ session_start();
 echo "here1";
 $items = Array();
 $temp = new Item();
-foreach($_SESSION as $key){
-    $temp = $_SESSION[$key];
-    echo $temp->name;
+$items = $_SESSION['list'];
+foreach($items as $name){
+    echo $name;
 }
 //$temp = $_SESSION["Boat"];
 
