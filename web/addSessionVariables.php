@@ -4,9 +4,11 @@ print_r($_SESSION);
 
 print ($_SESSION["Soda"]);
 $item = ($_SESSION["Soda"]);
-$reverted = unserialize($item);
-
-print $reverted;
+$item->added = 1;
+print $item["name"];
+print $item["price"];
+print $item["description"];
+print $item["added"];
 /*
 echo "hello we are here";
 $itemName = $_POST["name"];
