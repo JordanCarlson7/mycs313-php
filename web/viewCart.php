@@ -9,11 +9,15 @@ class Item {
 session_start();
 echo "here1";
 $items = Array();
+$gettingItems = Array();
 $temp = new Item();
-$items = $_SESSION['list'];
-foreach($items as $name){
+$gettingItems = $_SESSION['list'];
+foreach($gettingItems as $name){
     $temp = $_SESSION[$name];
-    echo $temp->description;
+    
+    if ($temp->added < 0){
+        $items[$name] = $temp;
+    }
 }
 //$temp = $_SESSION["Boat"];
 
