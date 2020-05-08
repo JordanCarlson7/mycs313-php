@@ -6,36 +6,36 @@ class Item {
     public $price;
     public $description;
     public $imgfile;
-    public $checked;
+    public $added;
 }
 
 $boat = new Item();
-$boat->name = "boat";
+$boat->name = "Boat";
 $boat->price = "8000";
 $boat->description = "Large personal yacht for friends and family";
 $boat->imgfile = "yacht.jpg";
-$boat->checked = false;
+$boat->added = 0;
 
 $plane = new Item();
-$plane->name = "plane";
+$plane->name = "Plane";
 $plane->price = "15000";
 $plane->description = "Small bush plane for leisure and travel";
 $plane->imgfile = "biPlane.jpg";
-$plane->checked = false;
+$plane->added = 0;
 
 $guitar = new Item();
-$guitar->name = "guitar";
+$guitar->name = "Guitar";
 $guitar->price = "3000";
 $guitar->description = "Jam out and become a rock star or family band-member";
 $guitar->imgfile = "guitar.jpg";
-$guitar->checked = false;
+$guitar->added = 0;
 
 $soda = new Item();
-$soda->name = "soda";
+$soda->name = "Soda";
 $soda->price = "1";
 $soda->description = "sit back and enjoy a refreshing beverage";
 $soda->imgfile = "sodaBottle.jpg";
-$soda->checked = false;
+$soda->added = 0;
 
 $items = [
     "Boat" => $boat,
@@ -64,7 +64,7 @@ $_SESSION["items"] = $items;
 <div class="row">
     <div class="col-sm-8">
     <?php foreach ($items as $item => $obj):?>
-        <div class="row" id="<?= $item ?>" data-description="<?= $obj->description ?>" data-price="<?= $obj->price ?>" data-imgfile="<?= $obj->imgfile ?>" data-added="<?= $obj->checked ?>">
+        <div class="row" id="<?= $item ?>" data-name="<?=$item->name?>" data-description="<?= $obj->description ?>" data-price="<?= $obj->price ?>" data-imgfile="<?= $obj->imgfile ?>" data-added="<?= $obj->added ?>">
         <div>
             <?= $item . ", $" . $obj->price ?>
             <p> <?= $obj->description ?></p>
