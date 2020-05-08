@@ -11,9 +11,9 @@ class Item {
 session_start();
 
 print_r($_SESSION);
-
+print ($_SESSION["Soda"]);
 //print ($_SESSION["Soda"]);
-$item = unserialize($_SESSION["Soda"]);
+$item = $_SESSION["Soda"];
 $item->added = 1;
 print $item["name"];
 print $item["price"];

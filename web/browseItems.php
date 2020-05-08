@@ -47,7 +47,7 @@ $items = [
 $_SESSION["Boat"] = $boat;
 $_SESSION["Plane"] = $plane;
 $_SESSION["Guitar"] = $guitar;
-$_SESSION["Soda"] = serialize($soda);
+$_SESSION["Soda"] = $soda;
 
 ?>
 
