@@ -45,7 +45,8 @@ foreach($gettingItems as $name){
             <?= $item . ", $" . $obj->price ?>
             <p> <?= $obj->description ?></p>
             <img src="<?= $obj->imgfile ?>" alt="<?= $item ?>">
-            <button type="button" id="<?= $item . "button" ?>" data-object="<?= json_encode($obj)?>" onclick="removeFromCart(this)" class="bg-dark light">Remove From Cart</button>
+            <br>
+            <button type="button" id="<?= $item . "button" ?>" data-object="<?= json_encode($obj)?>" onclick="removeFromCart(this)" class="bg-dark text-light">Remove From Cart</button>
         </div>
     </div>
     <?php endforeach;?>

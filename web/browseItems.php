@@ -26,7 +26,7 @@ $plane->added = 0;
 $guitar = new Item();
 $guitar->name = "Guitar";
 $guitar->price = "3000";
-$guitar->description = "Jam out and become a rock star or family band-member";
+$guitar->description = "Jam out and become a rock star;";
 $guitar->imgfile = "guitar.jpg";
 $guitar->added = 0;
 
@@ -99,7 +99,7 @@ $_SESSION["list"] = $itemNames;
 <div class="row">
     <div class="col-sm-8">
     <?php foreach ($items as $item => $obj):?>
-        <br>
+        <br><br>
         <div class="row" id="<?= $item ?>" data-name="<?=$obj->name?>" data-description="<?= $obj->description ?>" data-price="<?= $obj->price ?>" data-imgfile="<?= $obj->imgfile ?>" data-added="<?= $obj->added ?>">
         <div>
             <?= $item . ", $" . $obj->price ?>

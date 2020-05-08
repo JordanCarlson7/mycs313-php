@@ -37,4 +37,8 @@ input{
 }
 .row{
     text-align:center;
+    border-width: 1px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
 }
