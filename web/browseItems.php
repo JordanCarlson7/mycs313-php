@@ -44,7 +44,10 @@ $items = [
     "Soda" => $soda
 ];
 
-$_SESSION["items"] = $items;
+$_SESSION["Boat"] = $boat;
+$_SESSION["Plane"] = $Plane;
+$_SESSION["Guitar"] = $Guitar;
+$_SESSION["Soda"] = $soda;
 
 ?>
 
