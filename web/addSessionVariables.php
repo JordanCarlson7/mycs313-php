@@ -11,9 +11,10 @@ class Item {
 session_start();
 
 print_r($_SESSION);
-foreach ($_SESSION as $key){
-    echo $key;
-}
+$temp = new Item();
+$temp = $_SESSION['Boat'];
+print $temp->description;
+
 
 //print ($_SESSION["Soda"]);
 /*
