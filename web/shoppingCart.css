@@ -7,3 +7,7 @@ img {
     max-width: 360px;
     height: auto;
 }
+
+ul {
+    align-content: right;
+}
