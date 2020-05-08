@@ -5,10 +5,10 @@
             <a class="nav-link" href="browseItems.php">Home</a>
         </li>
         <li class="nav-item">
-            <a href="viewCart.php" id="toCart">View Cart</a>
+            <a class="nav-link" href="viewCart.php" id="toCart">View Cart</a>
         </li>
         <li class="nav-item">
-            <a href="checkout.php" id="checkout">Checkout</a>
+            <a class="nav-link" href="checkout.php" id="checkout">Checkout</a>
         </li>
         </ul>
 </nav> 
