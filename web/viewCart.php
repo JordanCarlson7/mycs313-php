@@ -7,9 +7,11 @@ class Item {
     public $added;
 }
 session_start();
-$items = array();
+echo "here1";
+$items = Array();
 $temp = new Item();
 echo $_SESSION[1];
+echo "here";
 
 
 ?>
