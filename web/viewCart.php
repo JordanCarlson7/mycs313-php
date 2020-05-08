@@ -15,7 +15,7 @@ $gettingItems = $_SESSION['list'];
 foreach($gettingItems as $name){
     $temp = $_SESSION[$name];
     
-    if ($temp->added < 0){
+    if ($temp->added > 0){
         $items[$name] = $temp;
     }
 }
