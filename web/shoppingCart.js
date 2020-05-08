@@ -1,4 +1,6 @@
 function addToCart(itemName){
+    sessionArray = sessionStorage.getItem("items");
+    console.log("session Data" + sessionArray[0].name);
     console.log(itemName);
     let object = document.getElementById(itemName.id);
     let data = object.getAttribute("data-object");
@@ -9,7 +11,8 @@ function addToCart(itemName){
     //console.log("This items: " + obj.price);
 }
 
-//sessionStorage
+
+
 function postItem(item){
    
     var xhttp = new XMLHttpRequest();

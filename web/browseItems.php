@@ -43,7 +43,10 @@ $items = [
     "Plane" => $plane,
     "Guitar" => $guitar,
     "Soda" => $soda
-]
+];
+
+$_SESSION["items"] = $items;
+
 ?>
 
 
@@ -67,7 +70,7 @@ $items = [
             <?= $item . ", $" . $obj->price ?>
             <p> <?= $obj->description ?></p>
             <img src="<?= $obj->imgfile ?>" alt="<?= $item ?>">
-            <button type="button" id="<?= $item . "button" ?>" data-object="<?php json_encode($obj)?>" onclick="addToCart(this)" class="bg-dark light">Add To Cart</button>
+            <button type="button" id="<?= $item . "button" ?>" data-object="<?= json_encode($obj)?>" onclick="addToCart(this)" class="bg-dark light">Add To Cart</button>
         </div>
     </div>
     <?php endforeach;?>
