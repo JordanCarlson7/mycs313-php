@@ -44,10 +44,10 @@ $items = [
     "Soda" => $soda
 ];
 
-$_SESSION["Boat"] = $boat;
-$_SESSION["Plane"] = $Plane;
-$_SESSION["Guitar"] = $Guitar;
-$_SESSION["Soda"] = $soda;
+$_SESSION["Boat"] = serialize($boat);
+$_SESSION["Plane"] = $plane;
+$_SESSION["Guitar"] = $guitar;
+$_SESSION["Soda"] = serialize($soda);
 
 ?>
 
