@@ -9,11 +9,13 @@ class Item {
 }
 
 session_start();
-
+$name = $_POST['name'];
 print_r($_SESSION);
 $temp = new Item();
-$temp = $_SESSION['Boat'];
+$temp = $_SESSION[$name];
 print $temp->description;
+$temp->added = 1;
+$_SESSION[$name] = $temp;
 
 
 //print ($_SESSION["Soda"]);
