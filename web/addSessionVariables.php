@@ -16,6 +16,7 @@ $temp = $_SESSION[$name];
 print $temp->description;
 $temp->added = 1;
 $_SESSION[$name] = $temp;
+print_r($_SESSION);
 
 
 //print ($_SESSION["Soda"]);
