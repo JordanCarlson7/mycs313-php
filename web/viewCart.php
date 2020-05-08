@@ -10,7 +10,8 @@ session_start();
 echo "here1";
 $items = Array();
 $temp = new Item();
-echo $_SESSION["Boat"];
+$temp = $_SESSION["Boat"];
+echo $temp->name;
 echo "here";
 
 
