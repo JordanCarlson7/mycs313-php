@@ -26,7 +26,7 @@ $plane->added = 0;
 $guitar = new Item();
 $guitar->name = "Guitar";
 $guitar->price = "3000";
-$guitar->description = "Jam out and become a rock star;";
+$guitar->description = "Jam out and become a rock star";
 $guitar->imgfile = "guitar.jpg";
 $guitar->added = 0;
 
