@@ -3,8 +3,10 @@ session_start();
 print_r($_SESSION);
 
 print ($_SESSION["Soda"]);
+$item = ($_SESSION["Soda"]);
+$reverted = unserialize($item);
 
-print unserialize(($_SESSION["Soda"]));
+print $reverted;
 /*
 echo "hello we are here";
 $itemName = $_POST["name"];
