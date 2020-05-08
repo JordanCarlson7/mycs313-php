@@ -11,7 +11,7 @@ echo "here1";
 $items = Array();
 $temp = new Item();
 foreach($_SESSION as $key){
-    $temp = $_SESSION[${$key}];
+    $temp = $_SESSION[$key];
     echo $temp->name;
 }
 //$temp = $_SESSION["Boat"];
