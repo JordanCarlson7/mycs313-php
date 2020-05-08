@@ -9,29 +9,22 @@ class Item {
 }
 
 session_start();
-$name = $_POST['name'];
 print_r($_SESSION);
+
+$name = $_POST['name'];
+
+//value needs to be the same custom data type in order for the php file to handel it, must be declared before getting from SESSION.
+//Session does not remember custom data types declarations between php files.
 $temp = new Item();
 $temp = $_SESSION[$name];
+
 print $temp->description;
+
+//Show that the item was added to the shopping cart
 $temp->added = 1;
+//update the item in the session
 $_SESSION[$name] = $temp;
+
 print_r($_SESSION);
 
-
-//print ($_SESSION["Soda"]);
-/*
-$item = $_SESSION["Soda"];
-$item->added = 1;
-print $item["name"];
-print $item["price"];
-print $item["description"];
-print $item["added"];*/
-/*
-echo "hello we are here";
-$itemName = $_POST["name"];
-$itemToChange = $_SESSION[$itemName];
-$itemToChange->added = 1;
-echo $itemToChange->description;
-*/
 ?>
