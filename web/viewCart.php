@@ -9,13 +9,7 @@ class Item {
 session_start();
 $items = array();
 $temp = new Item();
-foreach($_SESSION as $key => $value){
-    $temp = $_SESSION[$key];
-    
-    if($temp->added < 0){
-        $items[$key] = $temp;
-    }
-}
+echo $_SESSION[1];
 
 
 ?>

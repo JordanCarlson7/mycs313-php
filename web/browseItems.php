@@ -43,11 +43,39 @@ $items = [
     "Guitar" => $guitar,
     "Soda" => $soda
 ];
+//Check defaults if not there then add
+if (isset($_SESSION["Boat"])){
 
-$_SESSION["Boat"] = $boat;
-$_SESSION["Plane"] = $plane;
-$_SESSION["Guitar"] = $guitar;
-$_SESSION["Soda"] = $soda;
+}
+else {
+    $_SESSION["Boat"] = $boat;
+}
+
+//Check defaults if not there then add
+if (isset($_SESSION["Plane"])){
+
+}
+else {
+    $_SESSION["Plane"] = $plane;
+}
+
+//Check defaults if not there then add
+if (isset($_SESSION["Guitar"])){
+
+}
+else {
+    $_SESSION["Guitar"] = $guitar;
+}
+
+//Check defaults if not there then add
+if (isset($_SESSION["Soda"])){
+
+}
+else {
+    $_SESSION["Soda"] = $soda;
+}
+
+
 
 ?>
 
