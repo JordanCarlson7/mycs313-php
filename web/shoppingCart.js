@@ -6,6 +6,7 @@ function addToCart(itemName){
     console.log(name[0]);
     let addingObject = document.getElementById(name[0]);
     console.log(addingObject.dataset);
+    console.log(addingObject.dataset.name);
     //name and added is all we want.
     let sendString = "";
     sendString = "name=" + addingObject.dataset.name + "&added=" + addingObject.dataset.added;
@@ -28,5 +29,6 @@ function postItem(item){
       };
       xhttp.open("POST", "addSessionVariables.php", true);//open(method, url, async);
       xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      console.log(item);
       xhttp.send(item);
 }
