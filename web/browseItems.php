@@ -16,7 +16,6 @@ $boat->description = "Large personal yacht for friends and family";
 $boat->imgfile = "yacht.jpg";
 $boat->checked = false;
 
-
 $plane = new Item();
 $plane->name = "plane";
 $plane->price = "15000";
@@ -70,7 +69,7 @@ $_SESSION["items"] = $items;
             <?= $item . ", $" . $obj->price ?>
             <p> <?= $obj->description ?></p>
             <img src="<?= $obj->imgfile ?>" alt="<?= $item ?>">
-            <button type="button" id="<?= $item . "button" ?>" data-object="<?= json_encode($obj)?>" onclick="addToCart(this)" class="bg-dark light">Add To Cart</button>
+            <button type="button" id="<?= $item . "button" ?>" data-object="<?= json_encode($obj)?>" onclick="addToCart(<?= json_encode($obj)?>)" class="bg-dark light">Add To Cart</button>
         </div>
     </div>
     <?php endforeach;?>
