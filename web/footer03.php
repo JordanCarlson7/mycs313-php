@@ -1,1 +1,1 @@
-<footer class="bg-dark navbar-dark display-3">Footer</footer>
+<br> <footer class="bg-dark navbar-dark text-light display-5">Thank you for choosing Carlson Industries</footer>
