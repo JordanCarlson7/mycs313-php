@@ -9,7 +9,7 @@ function addToCart(itemName){
     //console.log("This items: " + obj.price);
 }
 
-
+//sessionStorage
 function postItem(item){
    
     var xhttp = new XMLHttpRequest();
