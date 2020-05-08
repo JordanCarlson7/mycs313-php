@@ -44,6 +44,7 @@ $stateLine = htmlspecialchars($stateLine);
     <div class="row">
     <div class="col-sm-8">
     <?php foreach ($items as $item => $obj):?>
+        <br>
         <div class="row" id="<?= $item ?>" data-name="<?=$obj->name?>" data-description="<?= $obj->description ?>" data-price="<?= $obj->price ?>" data-imgfile="<?= $obj->imgfile ?>" data-added="<?= $obj->added ?>">
         <div>
             <?= $item . ", $" . $obj->price ?>
@@ -61,6 +62,6 @@ $stateLine = htmlspecialchars($stateLine);
     <?= $stateLine ?>
     </div>
 </div>
-    <?php include "footer.php"?>
+    <?php include "footer03.php"?>
 </body>
 </html>

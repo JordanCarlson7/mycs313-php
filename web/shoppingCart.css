@@ -5,16 +5,14 @@ body{
 
 header {
     text-align: right;
+    margin-bottom: 10px;
 }
 
 footer{
     text-align: center;
 }
 
-a:hover{
-    background-color: bisque;
-    border-color: #343a40;
-}
+
 img {
     max-width: 360px;
     height: auto;
@@ -25,7 +23,13 @@ form {
     margin-left:30%;
 }
 
-.row {
-    margin-right:30%;
+input{
+    float: right;
+}
+
+.col-sm-8 {
     margin-left:30%;
+}
+.row{
+    text-align:center;
 }
