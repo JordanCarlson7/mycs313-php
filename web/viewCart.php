@@ -12,7 +12,8 @@ $items = Array();
 $temp = new Item();
 $items = $_SESSION['list'];
 foreach($items as $name){
-    echo $name;
+    $temp = $_SESSION[$name];
+    echo $temp->description;
 }
 //$temp = $_SESSION["Boat"];
 
