@@ -1,5 +1,15 @@
 <?php
+
+class Item {
+    public $name;
+    public $price;
+    public $description;
+    public $imgfile;
+    public $added;
+}
+
 session_start();
+
 print_r($_SESSION);
 
 print ($_SESSION["Soda"]);
