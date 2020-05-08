@@ -11,8 +11,8 @@ class Item {
 session_start();
 
 print_r($_SESSION);
-foreach ($_SESSION as $key => $value){
-    echo $key . "and" . $value;
+foreach ($_SESSION as $key){
+    echo $key;
 }
 
 //print ($_SESSION["Soda"]);
