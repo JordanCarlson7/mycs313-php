@@ -12,6 +12,10 @@ footer{
     text-align: center;
 }
 
+button {
+    max-width: 360px;
+    height: auto;
+}
 
 img {
     max-width: 360px;
@@ -28,7 +32,8 @@ input{
 }
 
 .col-sm-8 {
-    margin-left:30%;
+    padding-left:25%;
+    
 }
 .row{
     text-align:center;
