@@ -41,13 +41,14 @@ foreach($gettingItems as $name){
     <?php foreach ($items as $item => $obj):?>
         <br>
         <div class="row" id="<?= $item ?>" data-name="<?=$obj->name?>" data-description="<?= $obj->description ?>" data-price="<?= $obj->price ?>" data-imgfile="<?= $obj->imgfile ?>" data-added="<?= $obj->added ?>">
-        <div>
-            <h1 class="display-4"><?= $item . ", $" . $obj->price ?><h1>
+        
+            <div class="itemHeading"><h1 class="display-4 left"><?= $item ?></h1><h1 class="display-4 right"><?="$" . $obj->price ?></h1></div>
+            <br>
             <p> <?= $obj->description ?></p>
             <img src="<?= $obj->imgfile ?>" alt="<?= $item ?>">
             <br>
             <button type="button" id="<?= $item . "button" ?>" data-object="<?= json_encode($obj)?>" onclick="removeFromCart(this)" class="bg-dark text-light">Remove From Cart</button>
-        </div>
+        
     </div>
     <?php endforeach;?>
     </div>

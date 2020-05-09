@@ -6,10 +6,17 @@ body{
 header {
     text-align: right;
     margin-bottom: 10px;
+
 }
 
+nav {
+    border-radius: 2px;
+    box-shadow:1px 1px 10px black;
+}
 footer{
     text-align: center;
+    border-radius: 2px;
+    box-shadow:1px 1px 30px black;
 }
 
 button {
@@ -27,12 +34,13 @@ button {
 }
 
 .right {
-    float: right;
+    float: left;
     font-weight: bold;
 }
 p {
-    margin-top:50px;
+    
     padding-top:25px;
+   
 }
 img {
     max-width: 360px;
@@ -56,6 +64,4 @@ input{
 }
 .row{
     text-align:center;
-    
-
 }
