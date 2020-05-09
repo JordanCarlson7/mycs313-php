@@ -10,6 +10,7 @@ function addToCart(itemName){
     sendString = "name=" + addingObject.dataset.name + "&added=" + addingObject.dataset.added;
 
     postAddItem(sendString);
+    alert(name[0] + " Added to Cart");
 }
 
 
