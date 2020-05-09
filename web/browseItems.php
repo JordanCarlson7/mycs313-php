@@ -102,7 +102,7 @@ $_SESSION["list"] = $itemNames;
         <br><br>
         <div class="row" id="<?= $item ?>" data-name="<?=$obj->name?>" data-description="<?= $obj->description ?>" data-price="<?= $obj->price ?>" data-imgfile="<?= $obj->imgfile ?>" data-added="<?= $obj->added ?>">
         <div>
-            <?= $item . ", $" . $obj->price ?>
+            <div><h1 class="display-4 left"><?= $item ?></h1><h1 class="display-4 right"><?="$" . $obj->price ?></h1><div>
             <p> <?= $obj->description ?></p>
             <img src="<?= $obj->imgfile ?>" alt="<?= $item ?>">
             <br>

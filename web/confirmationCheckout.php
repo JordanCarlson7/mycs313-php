@@ -47,7 +47,7 @@ $stateLine = htmlspecialchars($stateLine);
         <br>
         <div class="row" id="<?= $item ?>" data-name="<?=$obj->name?>" data-description="<?= $obj->description ?>" data-price="<?= $obj->price ?>" data-imgfile="<?= $obj->imgfile ?>" data-added="<?= $obj->added ?>">
         <div>
-            <?= $item . ", $" . $obj->price ?>
+            <h1 class="display-4"><?= $item . ", $" . $obj->price ?><h1>
             <p> <?= $obj->description ?></p>
             <img src="<?= $obj->imgfile ?>" alt="<?= $item ?>">
         </div>
