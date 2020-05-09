@@ -101,13 +101,13 @@ $_SESSION["list"] = $itemNames;
     <?php foreach ($items as $item => $obj):?>
         <br><br>
         <div class="row" id="<?= $item ?>" data-name="<?=$obj->name?>" data-description="<?= $obj->description ?>" data-price="<?= $obj->price ?>" data-imgfile="<?= $obj->imgfile ?>" data-added="<?= $obj->added ?>">
-        <div>
-            <div><h1 class="display-4 left"><?= $item ?></h1><h1 class="display-4 right"><?="$" . $obj->price ?></h1><div>
+        
+            <div class="itemHeading"><h1 class="display-4 left"><?= $item ?></h1><h1 class="display-4 right"><?="$" . $obj->price ?></h1></div>
             <p> <?= $obj->description ?></p>
             <img src="<?= $obj->imgfile ?>" alt="<?= $item ?>">
             <br>
             <button type="button" id="<?= $item . "button" ?>" data-object="<?= json_encode($obj)?>" onclick="addToCart(this)" class="bg-dark text-light">Add To Cart</button>
-        </div>
+        
     </div>
     <?php endforeach;?>
     </div>
