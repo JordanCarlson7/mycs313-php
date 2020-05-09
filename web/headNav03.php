@@ -1,4 +1,3 @@
-<header class="display-1">Shopping</header>
 <nav class="navbar navbar-expand-sm bg-dark navbar-light">
     <ul class="navbar-nav">
         <li class="nav-item">

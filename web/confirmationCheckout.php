@@ -39,6 +39,7 @@ $stateLine = htmlspecialchars($stateLine);
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+<header class="display-1">Purchase Confirmed</header>
     <?php include "headNav03.php"?>
     <br>
     <div class="row">

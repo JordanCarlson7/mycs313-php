@@ -95,6 +95,7 @@ $_SESSION["list"] = $itemNames;
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+<header class="display-1">Shopping</header>    
 <?php include "headNav03.php" ?>
 <div class="row">
     <div class="col-sm-8">

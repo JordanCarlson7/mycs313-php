@@ -13,6 +13,7 @@ nav {
     border-radius: 2px;
     box-shadow:1px 1px 10px black;
 }
+
 footer{
     text-align: center;
     border-radius: 2px;
@@ -28,7 +29,6 @@ button {
     float: left;
 }
 
-
 .left {
     float: left;
 }
@@ -37,11 +37,12 @@ button {
     float: left;
     font-weight: bold;
 }
+
 p {
-    
-    padding-top:25px;
-   
+    font-family: sans-serif;
+    padding-left:10%;
 }
+
 img {
     max-width: 360px;
     height: auto;
@@ -62,6 +63,9 @@ input{
     padding-left:34px;
     
 }
+
 .row{
     text-align:center;
+    max-width: fit-content;
+
 }

@@ -34,6 +34,7 @@ foreach($gettingItems as $name){
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+<header class="display-1">Cart</header>
 <?php include "headNav03.php"?>
 
 <div class="row">
