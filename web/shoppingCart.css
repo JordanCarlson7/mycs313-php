@@ -18,13 +18,10 @@ button {
     border-radius: 10px;
     border-style: none;
     box-shadow: 2px 2px 10px black;
-    margin-top:5px;
     float: left;
 }
 
-.itemHeading{
-    max-width:360px;
-}
+
 .left {
     float: left;
 }

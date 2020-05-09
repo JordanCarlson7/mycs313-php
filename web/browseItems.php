@@ -33,7 +33,7 @@ $guitar->added = 0;
 $soda = new Item();
 $soda->name = "Soda";
 $soda->price = "1";
-$soda->description = "sit back and enjoy a refreshing beverage";
+$soda->description = "Sit back and enjoy a refreshing beverage";
 $soda->imgfile = "sodaBottle.jpg";
 $soda->added = 0;
 
@@ -102,8 +102,7 @@ $_SESSION["list"] = $itemNames;
         <br><br>
         <div class="row" id="<?= $item ?>" data-name="<?=$obj->name?>" data-description="<?= $obj->description ?>" data-price="<?= $obj->price ?>" data-imgfile="<?= $obj->imgfile ?>" data-added="<?= $obj->added ?>">
         
-            <div class="itemHeading"><h1 class="display-4 left"><?= $item ?></h1><h1 class="display-4 right"><?="$" . $obj->price ?></h1></div>
-            <p> <?= $obj->description ?></p>
+            <div class="itemHeading"><h1 class="display-4 left"><?= $item ?></h1><p> <?= $obj->description ?></p><h1 class="display-4 right"><?="$" . $obj->price ?></h1></div>
             <img src="<?= $obj->imgfile ?>" alt="<?= $item ?>">
             <br>
             <button type="button" id="<?= $item . "button" ?>" data-object="<?= json_encode($obj)?>" onclick="addToCart(this)" class="bg-dark text-light">Add To Cart</button>
