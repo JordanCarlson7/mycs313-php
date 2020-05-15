@@ -30,7 +30,7 @@ CREATE TABLE profiles (
 CREATE TABLE schedules (
     id SERIAL NOT NULL,
     user_name VARCHAR(255) NOT NULL REFERENCES profiles(user_name),
-    schedule_id VARCHAR(255) NOT NULL PRIMARY KEY
+    schedule_id VARCHAR(255) NOT NULL UNIQUE PRIMARY KEY
 );
 
 --Create Projects table--
@@ -38,7 +38,7 @@ CREATE TABLE projects (
     id SERIAL NOT NULL,
     user_name VARCHAR(255) NOT NULL REFERENCES profiles(user_name),
     schedule_id VARCHAR(255) NOT NULL REFERENCES schedules(schedule_id),
-    project_id VARCHAR(255) NOT NULL PRIMARY KEY,
+    project_id VARCHAR(255) NOT NULL UNIQUE PRIMARY KEY,
     description VARCHAR(255) NOT NULL,
     timeline timing
 );
