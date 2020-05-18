@@ -23,6 +23,12 @@ catch (PDOException $ex)
   die();
 }
 
-echo $dbHost . ' ' . $dbUser . ' ' . $dbPassword;
+foreach ($db->query('SELECT * FROM person') as $row)
+{
+  echo 'First Name: ' . $row['firstname'];
+  echo ' Last Name: ' . $row['lastname'];
+  echo '<br/>';
+}
+
 
 ?>
