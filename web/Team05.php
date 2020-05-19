@@ -1,5 +1,7 @@
 <?php
-$searchTerm = filter_var(INPUT_POST, 'search', FILTER_SANITIZE_STRING);
+$searchTerm = filter_var(INPUT_GET, 'search', FILTER_SANITIZE_STRING);
+echo $searchTerm;
+echo "get object: " . $_GET['search'];
 
 try
 {
@@ -32,7 +34,7 @@ if (empty($searchTerm)) {
     $scriptures[] = $row;
   }
 } else {
-  foreach($db->query("SELECT * FROM scriptures WHERE book LIKE {$searchTerm}") as $row) {
+  foreach($db->query("SELECT * FROM scriptures WHERE book LIKE '{$searchTerm}'") as $row) {
     $scripture[] = $row;
   }
 } 
@@ -76,16 +78,6 @@ if (empty($searchTerm)) {
             <?php endforeach; ?>
         </tbody>
     </table>
-    
-    <!-- 	    echo "<p><strong>$book $chapter:$verse</strong> - \"$content\"<p>"; -->
-
-    
-<!-- foreach ($db->query('SELECT username, password FROM note_user') as $row)
-{
-  echo 'user: ' . $row['username'];
-  echo ' password: ' . $row['password'];
-  echo '<br/>';
-} -->
 
 </body>
 </html>
