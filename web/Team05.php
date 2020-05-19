@@ -1,4 +1,6 @@
 <?php
+$searchTerm = filter_var(INPUT_POST, 'search', FILTER_SANITIZE_STRING);
+
 try
 {
   $dbUrl = getenv('DATABASE_URL');
@@ -24,11 +26,16 @@ catch (PDOException $ex)
 
 $scriptures = [];
 
-foreach ($db->query('SELECT * FROM scriptures') as $row)
-{
-  $scriptures[] = $row;
+if (empty($searchTerm)) {
+  foreach ($db->query('SELECT * FROM scriptures') as $row)
+  {
+    $scriptures[] = $row;
   }
-  
+} else {
+  foreach($db->query("SELECT * FROM scriptures WHERE book LIKE {$searchTerm}") as $row) {
+    $scripture[] = $row;
+  }
+} 
 ?>
 
 <!DOCTYPE html>
@@ -37,10 +44,19 @@ foreach ($db->query('SELECT * FROM scriptures') as $row)
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Scripture List</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   
 </head>
 <body>
-    <table>
+    <h1>Scripture Resources</h1>
+    <form action="index.php" method="POST">
+    <input type="submit">
+    <button type="submit">Submit</button>
+    </form>
+    
+    
+    <table class="table table-dark table-striped">
         <thead>
           <tr>
             <th scope="col">Book</th>
