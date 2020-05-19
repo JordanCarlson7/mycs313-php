@@ -1,6 +1,8 @@
 <?php
-// $searchTerm = filter_var(INPUT_GET, 'search', FILTER_SANITIZE_STRING);
-$searchTerm = $_GET['search'];
+// $searchTerm = filter_var(INPUT_GET, 'search', FILTER_SANITIZE_STRING);\
+if (isset($_GET['search'])) {
+  $searchTerm = $_GET['search'];
+}
 
 function dd($var) {
   var_dump($var);
