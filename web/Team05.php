@@ -21,7 +21,7 @@ catch (PDOException $ex)
   die();
 }
 
-$stmt = $pdo::prepare('SELECT * FROM scriptures');
+$stmt = $pdo->prepare('SELECT * FROM scriptures');
 $stmt->execute();
 $scriptures = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $stmt->closeCursor();
