@@ -31,6 +31,8 @@ catch (PDOException $ex)
   die();
 }
 
+dd('here');
+
 if (!isset($searchTerm)) {
   $stmt = $db->prepare('SELECT * FROM scriptures');
 } else {
