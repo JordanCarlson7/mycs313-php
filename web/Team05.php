@@ -51,11 +51,11 @@ foreach ($db->query('SELECT * FROM scriptures') as $row)
         </thead>
         <tbody>
             <?php foreach($scriptures as $scripture):?>
-            <tr>
-              <td><?= $scripture->book?></td>
-              <td><?= $scripture->chapter . ":"?></td>
-              <td><?= $scripture->verse?></td>
-              <td><?= $scripture->content?></td>
+                <tr>
+              <td><strong><?= $scripture['book']?></strong></td>
+              <td><strong><?= $scripture['chapter'] . ":"?></strong></td>
+              <td><strong><?= $scripture['verse']?></strong></td>
+              <td><?= $scripture['content']?></td>
             </tr> 
             <?php endforeach; ?>
         </tbody>
