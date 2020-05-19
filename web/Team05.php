@@ -46,8 +46,6 @@ $scriptures = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 $stmt->closeCursor();
 
-dd('here');
-
 /*$stmt = $db->prepare("SELECT * FROM scriptures WHERE book LIKE '$searchTerm'");
 
 
