@@ -1,7 +1,6 @@
 <?php
-$searchTerm = filter_var(INPUT_GET, 'search', FILTER_SANITIZE_STRING);
-echo $searchTerm;
-echo "get object: " . $_GET['search'];
+// $searchTerm = filter_var(INPUT_GET, 'search', FILTER_SANITIZE_STRING);
+$searchTerm = $_GET['search'];
 
 try
 {
@@ -28,13 +27,13 @@ catch (PDOException $ex)
 
 $scriptures = [];
 
-if (empty($searchTerm)) {
+if (!$searchTerm) {
   foreach ($db->query('SELECT * FROM scriptures') as $row)
   {
     $scriptures[] = $row;
   }
 } else {
-  foreach($db->query("SELECT * FROM scriptures WHERE book LIKE '{$searchTerm}'") as $row) {
+  foreach($db->query("SELECT * FROM scriptures WHERE book = $searchTerm") as $row) {
     $scripture[] = $row;
   }
 } 
@@ -52,7 +51,7 @@ if (empty($searchTerm)) {
 </head>
 <body>
     <h1>Scripture Resources</h1>
-    <form action="Team05.php" method="GET">
+    <form action="index.php" method="GET">
     <input type="text" name="search">
     <button type="submit">Submit</button>
     </form>
