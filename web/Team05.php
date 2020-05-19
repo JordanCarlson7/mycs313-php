@@ -24,7 +24,7 @@ catch (PDOException $ex)
   die();
 }
 
-if (isset($searchTerm)) {
+if (!isset($searchTerm)) {
   $stmt = $db->prepare('SELECT * FROM scriptures');
 } else {
   $stmt = $db->prepare('SELECT * FROM scriptures WHERE book LIKE :searchTerm');
