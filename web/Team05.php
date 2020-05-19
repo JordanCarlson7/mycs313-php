@@ -33,7 +33,7 @@ if (!$searchTerm) {
     $scriptures[] = $row;
   }
 } else {
-  foreach($db->query("SELECT * FROM scriptures WHERE book = $searchTerm") as $row) {
+  foreach($db->query("SELECT * FROM scriptures WHERE book LIKE '$searchTerm'") as $row) {
     $scripture[] = $row;
   }
 } 
