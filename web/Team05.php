@@ -50,8 +50,8 @@ if (empty($searchTerm)) {
 </head>
 <body>
     <h1>Scripture Resources</h1>
-    <form action="Team05.php" method="POST">
-    <input type="submit">
+    <form action="Team05.php" method="GET">
+    <input type="text" name="search">
     <button type="submit">Submit</button>
     </form>
     
