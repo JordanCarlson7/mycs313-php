@@ -50,7 +50,7 @@ if (empty($searchTerm)) {
 </head>
 <body>
     <h1>Scripture Resources</h1>
-    <form action="index.php" method="POST">
+    <form action="Team05.php" method="POST">
     <input type="submit">
     <button type="submit">Submit</button>
     </form>
