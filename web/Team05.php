@@ -51,7 +51,7 @@ if (!$searchTerm) {
 </head>
 <body>
     <h1>Scripture Resources</h1>
-    <form action="index.php" method="GET">
+    <form action="Team05.php" method="GET">
     <input type="text" name="search">
     <button type="submit">Submit</button>
     </form>
