@@ -24,19 +24,32 @@ catch (PDOException $ex)
   die();
 }
 
-
-$scriptures = [];
-
 if (!$searchTerm) {
-  foreach ($db->query('SELECT * FROM scriptures') as $row)
+  $stmt = $db->prepare('SELECT * FROM scriptures');
+} else {
+  $stmt = $db->prepare('SELECT * FROM scriptures WHERE book LIKE :searchTerm');
+}
+
+$stmt->bindValue(':searchTerm', $searchTerm);
+
+$stmt->execute();
+
+$scriptures = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+$stmt->closeCursor();
+
+/*$stmt = $db->prepare("SELECT * FROM scriptures WHERE book LIKE '$searchTerm'");
+
+
+  foreach ($scriptures as $row)
   {
     $scriptures[] = $row;
   }
 } else {
-  foreach($db->query("SELECT * FROM scriptures WHERE book LIKE '$searchTerm'") as $row) {
+  foreach($db->query("SELECT * FROM scriptures WHERE book LIKE :") as $row) {
     $scripture[] = $row;
   }
-} 
+} */
 ?>
 
 <!DOCTYPE html>
