@@ -21,10 +21,14 @@ catch (PDOException $ex)
   die();
 }
 
-$stmt = $pdo->prepare('SELECT * FROM scriptures');
-$stmt->execute();
-$scriptures = $stmt->fetchAll(PDO::FETCH_ASSOC);
-$stmt->closeCursor();
+
+$scriptures = [];
+
+foreach ($db->query('SELECT * FROM scriptures') as $row)
+{
+  $scriptures[] = $row;
+  }
+  
 ?>
 
 <!DOCTYPE html>
