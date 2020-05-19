@@ -2,6 +2,11 @@
 // $searchTerm = filter_var(INPUT_GET, 'search', FILTER_SANITIZE_STRING);
 $searchTerm = $_GET['search'];
 
+function dd($var) {
+  var_dump($var);
+  die();
+}
+
 try
 {
   $dbUrl = getenv('DATABASE_URL');
@@ -30,7 +35,7 @@ if (!isset($searchTerm)) {
   $stmt = $db->prepare('SELECT * FROM scriptures WHERE book LIKE :searchTerm');
 }
 
-$stmt->bindValue(':searchTerm', $searchTerm);
+$stmt->bindValue(':searchTerm', $searchTerm, PDO::PARAM_INT);
 
 $stmt->execute();
 
@@ -68,7 +73,6 @@ $stmt->closeCursor();
     <input type="text" name="search">
     <button type="submit">Submit</button>
     </form>
-    
     
     <table class="table table-dark table-striped">
         <thead>
