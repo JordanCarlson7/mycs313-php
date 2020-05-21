@@ -36,7 +36,7 @@ catch (PDOException $ex)
 if (!isset($searchTerm)) {
   $stmt = $db->prepare('SELECT * FROM profiles, schedules, projects, data_points');
 } else {
-  $stmt = $db->prepare('SELECT * FROM profiles, schedules, projects, data_points WHERE user_name = :user_name');
+  $stmt = $db->prepare('SELECT * FROM profiles, schedules, projects, data_points WHERE user_name = "TEST_USER_2"');
   $stmt->bindValue(':user_name', $searchTerm, PDO::PARAM_INT);
 }
 
