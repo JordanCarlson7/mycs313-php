@@ -43,7 +43,7 @@ if (!isset($searchTerm)) {
 $stmt->execute();
 
 $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+echo $projects;
 $stmt->closeCursor();
 
 ?>
