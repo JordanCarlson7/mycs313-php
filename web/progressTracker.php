@@ -60,7 +60,7 @@ $stmt->closeCursor();
 </head>
 <body>
     <h1>Progress Bar</h1>
-    <form action="Team05.php" method="GET">
+    <form action="progressTracker.php" method="GET">
     <input type="text" name="search">
     <button type="submit">Submit</button>
     </form>
