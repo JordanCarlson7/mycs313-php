@@ -79,7 +79,7 @@ $stmt->closeCursor();
         <tbody>
             <?php foreach($projects as $project):?>
                 <tr>
-              <td><strong><?= $project['user_name']?></strong></td>
+              <td><strong><?= $project['user_name'][1]?></strong></td>
               <td><strong><?= $project['schedule_id'] . ":"?></strong></td>
               <td><strong><?= $project['project_id']?></strong></td>
               <td><?= $project['timeline']?></td>
