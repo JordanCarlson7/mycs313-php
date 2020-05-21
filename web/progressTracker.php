@@ -36,14 +36,15 @@ catch (PDOException $ex)
 if (!isset($searchTerm)) {
   $stmt = $db->prepare('SELECT * FROM profiles, schedules, projects, data_points');
 } else {
-  $stmt = $db->prepare('SELECT * FROM profiles, schedules, projects, data_points WHERE user_name = "TEST_USER_2"');
+  $stmt = $db->prepare('SELECT * FROM profiles, schedules, projects, data_points WHERE user_name = :user_name');
   $stmt->bindValue(':user_name', $searchTerm, PDO::PARAM_INT);
 }
 
 $stmt->execute();
 
 $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
-echo $projects;
+echo $projects[0];
+echo $projects[1];
 $stmt->closeCursor();
 
 ?>
