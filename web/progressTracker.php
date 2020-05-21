@@ -36,8 +36,8 @@ catch (PDOException $ex)
 if (!isset($searchTerm)) {
   $stmt = $db->prepare('SELECT * FROM profiles, schedules, projects, data_points');
 } else {
- // $stmt = $db->prepare('SELECT * FROM projects WHERE book = :searchTerm');
-  //$stmt->bindValue(':searchTerm', $searchTerm, PDO::PARAM_INT);
+  $stmt = $db->prepare('SELECT * FROM profiles, schedules, projects, data_points WHERE user_name = :user_name');
+  $stmt->bindValue(':user_name', $searchTerm, PDO::PARAM_INT);
 }
 
 $stmt->execute();
@@ -79,7 +79,7 @@ $stmt->closeCursor();
         <tbody>
             <?php foreach($projects as $project):?>
                 <tr>
-              <td><strong><?= $project['user_name'][1]?></strong></td>
+              <td><strong><?= $project['user_name']?></strong></td>
               <td><strong><?= $project['schedule_id'] . ":"?></strong></td>
               <td><strong><?= $project['project_id']?></strong></td>
               <td><?= $project['timeline']?></td>
