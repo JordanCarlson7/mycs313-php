@@ -34,7 +34,7 @@ function format(jsonObj){
                     <td>${theObj[i].user_name}</td>
                     <td>${theObj[i].password}</td>
                     <td>${theObj[i].schedule_id}</td>
-                    <td>${theObj[i].data_point.attach1}</td>
+                    <td><img src="${theObj[i].data_point}" alt="${theObj[i].data_point}"></td>
                   </tr>
                  `
     }
