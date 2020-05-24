@@ -57,7 +57,7 @@ $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <h1>Progress Bar</h1>
     <form action="progressTracker.php" method="GET">
     <input type="text" name="search">
-    <button type="submit">Submit</button>
+    <button type="submit">Submit User (*try TEST_USER)</button>
     </form>
     
     <table class="table table-dark table-striped">
