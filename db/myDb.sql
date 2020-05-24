@@ -69,6 +69,10 @@ INSERT INTO data_points (user_name, project_id, data_point) VALUES
     ('TEST_USER', 'TEST_PROJECT_1', '(TEST_DATA_POINT_2, POINT_2_DESC, 06-06-2020, TEST1.jpg, TEST2.jpg, TEST3.txt)'),
     ('TEST_USER', 'TEST_PROJECT_1', '(TEST_DATA_POINT_3, POINT_3_DESC, 09-06-2020, TEST1.jpg, TEST2.jpg, TEST3.txt)');
 
+    --test--
+INSERT INTO data_points (user_name, project_id, data_point) VALUES 
+    ('TEST_USER', 'TEST_PROJECT_1', '(TEST_DATA_POINT_X, POINT_X_DESC, 03-06-2020, TEST1.jpg, TEST2.jpg, TEST3.txt)');
+
 
 
 -----------INSERT-----------
