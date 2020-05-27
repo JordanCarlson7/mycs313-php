@@ -15,4 +15,20 @@ INSERT INTO scriptures (book, chapter, verse, content)
          ('Doctrine and Covenants', 93, 28, 'He that keepeth his commandments receiveth truth and light, until he is glorified in truth and knoweth all things.'),
          ('Mosiah', 16, 9, 'He is the light and the life of the world; yea, a 
             light that is endless, that can never be darkened; yea, and also a life which is 
-            endless, that there can be no more death');$
+            endless, that there can be no more death');
+
+CREATE TABLE topic (
+  id SERIAL PRIMARY KEY NOT NULL,
+  name VARCHAR(40) NOT NULL
+);
+
+INSERT INTO topic (name)
+VALUES ('Faith'),
+       ('Sacrifice'),
+       ('Charity');
+
+CREATE TABLE scripture_topic (
+   id SERIAL PRIMARY KEY NOT NULL,
+	scripture_id INT NOT NULL REFERENCES scriptures(id),
+	topic_id INT NOT NULL REFERENCES topic(id)
+);
