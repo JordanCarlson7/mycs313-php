@@ -19,6 +19,16 @@ function request(){
     
 }
 
+function removeQuotes(dataPoint) {
+  
+  dataPointHere = dataPoint.replace(/["]+/g, "");
+  dataPointArray = dataPointHere.split(',');
+  console.log("DATAPOINT String: " + dataPointHere);
+  return dataPointArray;
+
+}
+
+
 function format(jsonObj){
   console.log(jsonObj);
   theObj = JSON.parse(jsonObj);
@@ -28,10 +38,9 @@ function format(jsonObj){
   table = "<table><tr><th>User:</th><th>Password:</th><th>Schedule:</th><th>Img:</th></tr>";
   for (var i = 0; i < theObj.length; i++){
 
-
-      dataPoint = theObj[i].data_point.replace(/["]+/g, "");
-      console.log("DATAPOINT String: " + dataPoint);
-      dataPointArray = dataPoint.split(',');
+      /*remove extra quotations*/
+      dataPointArray = removeQuotes(theObj[i].data_point);
+  
       console.log(dataPointArray);
       console.log(theObj.length);
       console.log(theObj[i] + "\n");
