@@ -29,6 +29,7 @@ else {
   //die();
   echo $username;
   echo $password;
+  die();
 }
 
 
