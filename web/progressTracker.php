@@ -15,7 +15,7 @@ if (isset($_POST['password'])) {
 
 //check in database for profile
 $stmt = $db->prepare('SELECT user_name, password FROM profiles WHERE profiles.user_name = :user_name AND profiles.password = :password');
-  $stmt->bindValue(':user_name', $user_name, PDO::PARAM_INT);
+  $stmt->bindValue(':user_name', $username, PDO::PARAM_INT);
   $stmt->bindValue(':password', $password, PDO::PARAM_INT);
   
 $stmt->execute();
@@ -35,7 +35,7 @@ if (!$loggedIn) {
 } 
 else {
   $stmt = $db->prepare('SELECT * FROM profiles, schedules, projects, data_points WHERE profiles.user_name = :user_name AND profiles.password = :password');
-  $stmt->bindValue(':user_name', $user_name, PDO::PARAM_INT);
+  $stmt->bindValue(':user_name', $username, PDO::PARAM_INT);
   $stmt->bindValue(':password', $password, PDO::PARAM_INT);
 }
 
