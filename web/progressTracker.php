@@ -33,7 +33,7 @@ if (!$loggedIn) {
   $stmt = $db->prepare('');
 } 
 else {
-  $stmt = $db->prepare('SELECT * FROM profiles, schedules, projects, data_points WHERE profiles.user_name = :user_name AND profiles.password = :password');
+  $stmt = $db->prepare('SELECT * FROM profiles, schedules, projects WHERE profiles.user_name = :user_name AND profiles.password = :password');
   $stmt->bindValue(':user_name', $username, PDO::PARAM_INT);
   $stmt->bindValue(':password', $password, PDO::PARAM_INT);
 }
@@ -42,7 +42,7 @@ else {
 $stmt->execute();
 $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
 foreach ($projects as $project){
-  echo $project[0];
+  echo $project;
 }
 
 
@@ -59,7 +59,7 @@ else {
 $stmt->execute();
 $datas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 foreach ($datas as $data){
-  echo $data[0];
+  echo $data;
 }
 
 
@@ -115,8 +115,6 @@ foreach ($datas as $data){
               <td><strong><?= $project['schedule_id'] . ":"?></strong></td>
               <td><strong><?= $project['project_id']?></strong></td>
               <td><?= $project['timeline']?></td>
-              <td><?= $project['data_point']?></td>
-              <td><?= $project['data_point']?></td>
             </tr> 
             <?php endforeach; ?>
         </tbody>
