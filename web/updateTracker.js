@@ -25,11 +25,10 @@ function postQuery() {
     let query = '';
     let form = document.getElementById('updateForm');
     let inputs = form.getElementsByTagName('input');
-    inputs.forEach(element => {
+    for(let element of inputs) {
         query += element.id + "=" + element.value + "&"; 
-    });
-
-        query += "delete=false";
+    }  
+    query += "delete=false";
     request(query);
 
 }

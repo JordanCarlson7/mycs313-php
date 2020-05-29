@@ -71,13 +71,13 @@ foreach ($projects as $project){
     <form id="updateForm" action="" method="POST">
       
       <!--Header -->
-      <input type="text" value="<?= $username?>" name="username" style="display:none">
+      <input type="text" id="username" value="<?= $username?>" name="username" style="display:none">
       <label for="schedule">Schedule Name: </label>
-      <input type="text" name="schedule" value="">
+      <input type="text" id="schedule"name="schedule" value="">
       <label for="project">Project Name: </label>
-      <input type="text" name="schedule" value="">
+      <input type="text" id="project" name="project" value="">
       <label for="desc_proj">Project Description: </label>
-      <textarea name="schedule" value="" placeholder="Description..."></textarea>
+      <input name="description" id="description_project" value="" placeholder="Description..."></textarea>
       
       <!--Timeline-->
       <label for="startDate">Start Date: </label>
@@ -89,7 +89,7 @@ foreach ($projects as $project){
     <label for="title">Name: </label>
     <input type="text" name="title" id="title" value=""> 
     <label for="description">Description: </label>
-    <input type="text" name="description" id="description"> 
+    <input type="text" name="description_data" id="description"> 
     <label for="data_d">Date: </label>
     <input type="date" name="data_d" id="data_d" value="">
     <label type="text" for="attach1">Attachment 1</label>
