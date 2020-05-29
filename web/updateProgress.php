@@ -10,9 +10,9 @@ $username = $_POST['username'];
 $schedule = $_POST['schedule'];
   echo "user: " . $username;
   echo "sched " . $schedule;
-  /*
+  
   $stmt = $db->prepare('INSERT INTO schedules (user_name, schedule_id) VALUES (:username, :schedule)');
-  $stmt->bindValue(':username', $username, PDO::PARAM_INT);
+  /*$stmt->bindValue(':username', $username, PDO::PARAM_INT);
   $stmt->bindValue(':schedule', $schedule, PDO::PARAM_INT);
   
   $stmt->execute();
