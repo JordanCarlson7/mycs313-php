@@ -41,7 +41,9 @@ else {
 
 $stmt->execute();
 $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
-echo $projects;
+foreach ($projects as $project){
+  echo $project;
+}
 
 ?>
 
