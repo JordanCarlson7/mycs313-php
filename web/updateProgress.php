@@ -13,7 +13,7 @@ require 'accessDB.php';
   
   $stmt->execute();
 
-  
+  /*
   $stmt = $db->prepare('INSERT INTO projects (user_name, schedule_id, project_id, description, timeline) VALUES (:username, :schedule, :project, :description_project, (:timelineStart, :timelineEnd)');
   $stmt->bindValue(':username', $_POST['username'], PDO::PARAM_INT);
   $stmt->bindValue(':schedule', $_POST['schedule'], PDO::PARAM_INT);
@@ -24,5 +24,5 @@ require 'accessDB.php';
   
   
   $stmt->execute();
-
+*/
 ?>
