@@ -11,12 +11,12 @@ $schedule = $_POST['schedule'];
   echo "user: " . $username;
   echo "sched " . $schedule;
   
-  $stmt = $db->prepare('INSERT INTO schedules (user_name, schedule_id) VALUES (:username, :schedule)');
-  /*$stmt->bindValue(':username', $username, PDO::PARAM_INT);
+  $sql = 'INSERT INTO schedules (user_name, schedule_id) VALUES (:username, :schedule)';
+  $stmt = $this->pdo->prepare($sql);
+  $stmt->bindValue(':username', $username, PDO::PARAM_INT);
   $stmt->bindValue(':schedule', $schedule, PDO::PARAM_INT);
   
   $stmt->execute();
-*/
   /*
   $stmt = $db->prepare('INSERT INTO projects (user_name, schedule_id, project_id, description, timeline) VALUES (:username, :schedule, :project, :description_project, (:timelineStart, :timelineEnd)');
   $stmt->bindValue(':username', $_POST['username'], PDO::PARAM_INT);
