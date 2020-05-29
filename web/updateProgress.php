@@ -13,8 +13,8 @@ $schedule = $_POST['schedule'];
   
   $sql = 'INSERT INTO schedules (user_name, schedule_id) VALUES (:username, :schedule)';
   $stmt = $this->pdo->prepare($sql);
-  $stmt->bindValue(':username', $username, PDO::PARAM_INT);
-  $stmt->bindValue(':schedule', $schedule, PDO::PARAM_INT);
+  $stmt->bindValue(':username', $username,);
+  $stmt->bindValue(':schedule', $schedule,);
   
   $stmt->execute();
   /*
