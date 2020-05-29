@@ -51,12 +51,18 @@ if (!$loggedIn) {
   $stmt = $db->prepare('');
 } 
 else {
-  $query = "SELECT * FROM data_points WHERE profiles.user_name = " . $username . " AND profiles.password = " . $password;
-  $datas = pg_query($db, $query);
+  $stmt = $db->prepare('SELECT * FROM data_points WHERE profiles.user_name = :user_name AND profiles.password = :password');
+  $stmt->bindValue(':user_name', $username, PDO::PARAM_INT);
+  $stmt->bindValue(':password', $password, PDO::PARAM_INT);
 }
-while ($data = pg_fetch_object($datas)){
+
+
+$stmt->execute();
+$datas = $stmt->fetchAll(PDO::FETCH_ASSOC);
+foreach ($datas as $data){
   echo $data[0];
 }
+
 
 ?>
 
