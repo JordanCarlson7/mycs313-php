@@ -3,8 +3,6 @@ require 'accessDB.php';
 $db = getDB();
 
 
-
-
 // $searchTerm = filter_var(INPUT_GET, 'search', FILTER_SANITIZE_STRING);\
 if (isset($_POST['username'])) {
   $username = $_POST['username'];
@@ -30,6 +28,7 @@ else {
 }
 
 
+//GET PROFILE DATA
 if (!$loggedIn) {
   $stmt = $db->prepare('');
 } 
