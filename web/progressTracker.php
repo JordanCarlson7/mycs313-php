@@ -42,7 +42,7 @@ else {
 $stmt->execute();
 $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
 foreach ($projects as $project){
-  echo $project;
+  echo $project[0];
 }
 
 
@@ -55,7 +55,7 @@ else {
   $datas = pg_query($db, $query);
 }
 while ($data = pg_fetch_object($datas)){
-  echo $data;
+  echo $data[0];
 }
 
 ?>
