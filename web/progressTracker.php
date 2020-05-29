@@ -45,6 +45,24 @@ foreach ($projects as $project){
   echo $project;
 }
 
+
+//get Datapoints
+if (!$loggedIn) {
+  $stmt = $db->prepare('');
+} 
+else {
+  $stmt = $db->prepare('SELECT * FROM data_points WHERE profiles.user_name = :user_name AND profiles.password = :password');
+  $stmt->bindValue(':user_name', $username, PDO::PARAM_INT);
+  $stmt->bindValue(':password', $password, PDO::PARAM_INT);
+}
+
+
+$stmt->execute();
+$datas = $stmt->fetchAll(PDO::FETCH_ASSOC);
+while ($data = pg_fetch_object($datas)){
+  echo $data;
+}
+
 ?>
 
 <!DOCTYPE html>
