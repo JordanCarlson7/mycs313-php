@@ -41,7 +41,7 @@ else {
 
 $stmt->execute();
 $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+echo $projects;
 
 ?>
 
@@ -64,6 +64,19 @@ $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <button type="submit">Submit User (*try TEST_USER)</button>
     </form>
     
+    <nav class="nav"> 
+    <select name="schedule" id="schedule">
+        <?php foreach($projects as $project): ?>
+          <option value="<?= $project['schedule_id']?>"><?= $project['schedule_id']?></option>
+        <?php endforeach;?>
+    </select>
+    <select>
+        <?php foreach($projects as $project): ?>
+          <option value="<?= $project['project_id']?>"><?= $project['project_id']?></option>
+        <?php endforeach;?>
+    </select>
+    </nav>
+
     <table class="table table-dark table-striped">
         <thead>
           <tr>
