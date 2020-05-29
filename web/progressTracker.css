@@ -2,3 +2,13 @@ img{
     max-width: 30%;
     height: auto;
 }
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 33.33%;
+    height: auto;
+    margin: 33.33%;
+
+}
