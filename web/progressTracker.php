@@ -59,7 +59,7 @@ else {
 $stmt->execute();
 $datas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 foreach ($datas as $data){
-  echo $data['title'];
+  echo $data->title;
 }
 
 
