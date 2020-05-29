@@ -51,9 +51,8 @@ if (!$loggedIn) {
   $stmt = $db->prepare('');
 } 
 else {
-  $stmt = $db->prepare('SELECT * FROM data_points WHERE profiles.user_name = :user_name AND profiles.password = :password');
+  $stmt = $db->prepare('SELECT data_point FROM data_points WHERE data_points.user_name = :user_name');
   $stmt->bindValue(':user_name', $username, PDO::PARAM_INT);
-  $stmt->bindValue(':password', $password, PDO::PARAM_INT);
 }
 
 
