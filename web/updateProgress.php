@@ -1,15 +1,17 @@
 <?php
 
 require 'accessDB.php';
+$db = getDB();
 
     foreach($_POST as $key => $value){
         echo $key . ": " . $value;
     }
-
-  $db = getDB();
+$username = $_POST['username'];
+$schedule = $_POST['schedule'];
+  
   $stmt = $db->prepare('INSERT INTO schedules (user_name, schedule_id) VALUES (:username, :schedule)');
-  $stmt->bindValue(':username', $_POST['username'], PDO::PARAM_INT);
-  $stmt->bindValue(':schedule', $_POST['schedule'], PDO::PARAM_INT);
+  $stmt->bindValue(':username', $username, PDO::PARAM_INT);
+  $stmt->bindValue(':schedule', $schedule, PDO::PARAM_INT);
   
   $stmt->execute();
 
