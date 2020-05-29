@@ -57,7 +57,7 @@ else {
 
 
 $stmt->execute();
-$datas = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$datas = $stmt->fetchAll(PDO::FETCH_OBJ);
 foreach ($datas as $data){
   echo $data->title;
 }
