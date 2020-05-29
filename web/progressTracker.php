@@ -25,10 +25,7 @@ if($profile){
   $loggedIn = true;
 }
 else {
-  //header("Location: progressTrackerLogin.php");
-  //die();
-  echo $username;
-  echo $password;
+  header("Location: progressTrackerLogin.php");
   die();
 }
 
