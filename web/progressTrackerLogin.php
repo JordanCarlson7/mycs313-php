@@ -17,7 +17,7 @@
     <input type="text" value="" placeholder="User">
     <label for="password">Password:</label>
     <input type="text" value="" placeholder="Password">
-    <button type="submit">Submit</button>
+    <input type="submit">Submit</input>
     <button type="reset">Reset</button>
     </form>
 </body>
