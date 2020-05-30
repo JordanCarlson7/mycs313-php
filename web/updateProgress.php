@@ -6,6 +6,8 @@ $db = getDB();
     foreach($_POST as $key => $value){
         echo $key . ": " . $value;
     }
+
+    die();
 $username = $_POST['username'];
 $schedule = $_POST['schedule'];
   echo "user: " . $username;
