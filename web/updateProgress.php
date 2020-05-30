@@ -22,14 +22,15 @@ $schedule = $_POST['schedule'];
   $schedule = $_POST['schedule'];
   $project = $_POST['project'];
   $description_project = $_POST['description_project'];
+  $startDate = $_POST['startDate'];
   
   $stmt = $db->prepare('INSERT INTO projects (user_name, schedule_id, project_id, description, start_d, end_d) VALUES (:username, :schedule, :project, :description_project, :timelineStart, :timelineEnd)');
   $stmt->bindValue(':username', $username, PDO::PARAM_INT);
   $stmt->bindValue(':schedule', $schedule, PDO::PARAM_INT);
   $stmt->bindValue(':project', $project, PDO::PARAM_INT);
   $stmt->bindValue(':description_project', $description_project, PDO::PARAM_INT);
-  $stmt->bindValue(':timelineStart', $_POST['startDate'], PDO::PARAM_INT);
-  $stmt->bindValue(':timelineEnd', $_POST['endDate'], PDO::PARAM_INT);
+  $stmt->bindValue(':timelineStart', $startDate, PDO::PARAM_INT);
+  $stmt->bindValue(':timelineEnd', $endDate, PDO::PARAM_INT);
   
   
   $stmt->execute();

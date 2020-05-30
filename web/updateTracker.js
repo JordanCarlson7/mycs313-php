@@ -20,12 +20,14 @@ function request(postData, url){
   }
   
   function updateView(){
-   let username = document.getElementById('username').value;   
-   let schedule = document.getElementById('scheduleSelect').selected;
-   let project = document.getElementById('projectSelect').selected;
-   let query = "username=" + username + "&schedule=" + schedule + "&project=" + project;
-   request(query, 'access_Progress_DB.php');
-   
+    let username = document.getElementById('username').value;   
+    let scheduleE = document.getElementById('scheduleSelect');
+    let schedule = scheduleE.options[scheduleE.selectedIndex].value;
+    let projectE = document.getElementById('projectSelect');
+    let project = projectE.options[projectE.selectedIndex].value;
+    let query = "username=" + username + "&schedule=" + schedule + "&project=" + project;
+    console.log(query);
+    request(query, 'access_Progress_DB.php'); 
   }
 
   function formatView(response) {
