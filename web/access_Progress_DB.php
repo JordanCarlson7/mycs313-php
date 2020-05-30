@@ -3,7 +3,7 @@
 require 'accessDB.php';
 $db = getDB();
 foreach ($_POST as $key => $value){
-  echo $key . ": " . $value;
+  //echo $key . ": " . $value;
 }
 
 if (isset($_POST['username'])) {
