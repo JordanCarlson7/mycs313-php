@@ -2,7 +2,10 @@
 
 require 'accessDB.php';
 $db = getDB();
-
+foreach ($_POST as $key => $value){
+  echo $key . ": " . $value;
+}
+/*
 if (isset($_POST['username'])) {
     $username = $_POST['username'];
     $schedule = $_POST['schedule'];
@@ -23,5 +26,6 @@ $datas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 $returnString = json_encode($datas);
 echo $returnString;
+*/
 
 ?>
