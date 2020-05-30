@@ -12,9 +12,9 @@ if (isset($_POST['username'])) {
     $project = $_POST['project'];
 }
   
-$stmt = $db->prepare('SELECT title, description, data_d, attach1, attach2, attach3 FROM data_points WHERE data_points.user_name = :user_name AND data_points.project_id = :project_id');
-$stmt->bindValue(':user_name', $username, PDO::PARAM_INT);
-$stmnt->bindValue(':project_id', $project, PDO::PARAM_INT);
+$stmt = $db->prepare('SELECT title, description, data_d, attach1, attach2, attach3 FROM data_points');
+//$stmt->bindValue(':user_name', $username, PDO::PARAM_INT);
+//$stmnt->bindValue(':project_id', $project, PDO::PARAM_INT);
 
 $stmt->execute();
 $datas = $stmt->fetchAll(PDO::FETCH_ASSOC);
