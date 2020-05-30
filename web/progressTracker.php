@@ -13,9 +13,9 @@ if (isset($_POST['password'])) {
 
 //check in database for profile
 $stmt = $db->prepare('SELECT user_name, password FROM profiles WHERE profiles.user_name = :user_name AND profiles.password = :password');
-  $stmt->bindValue(':user_name', $username, PDO::PARAM_INT);
-  $stmt->bindValue(':password', $password, PDO::PARAM_INT);
-  
+$stmt->bindValue(':user_name', $username, PDO::PARAM_INT);
+$stmt->bindValue(':password', $password, PDO::PARAM_INT);
+
 $stmt->execute();
 $profile = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -86,33 +86,34 @@ foreach ($projects as $project){
       <input type="date" id="endDate" name="endDate" value="">
 
       <!--Data Point-->
-    <label for="title">Name: </label>
-    <input type="text" name="title" id="title" value=""> 
-    <label for="description">Description: </label>
-    <input type="text" name="description_data" id="description"> 
-    <label for="data_d">Date: </label>
-    <input type="date" name="data_d" id="data_d" value="">
-    <label type="text" for="attach1">Attachment 1</label>
-    <input name="attach1" id="attach1" value="">
-    <label type="text" for="attach2">Attachment 2</label>
-    <input name="attach2" id="attach2" value="">
-    <label type="text" for="attach3">Attachment 3</label>
-    <input name="attach3" id="attach3" value=""> 
+      <label for="title">Name: </label>
+      <input type="text" name="title" id="title" value=""> 
+      <label for="description">Description: </label>
+      <input type="text" name="description_data" id="description"> 
+      <label for="data_d">Date: </label>
+      <input type="date" name="data_d" id="data_d" value="">
+      <label type="text" for="attach1">Attachment 1</label>
+      <input name="attach1" id="attach1" value="">
+      <label type="text" for="attach2">Attachment 2</label>
+      <input name="attach2" id="attach2" value="">
+      <label type="text" for="attach3">Attachment 3</label>
+      <input name="attach3" id="attach3" value=""> 
     
     <button type="button" id="updateButton" onclick="postQuery()">Add/Update settings</button>
     </form>
     
     <nav class="nav"> 
-    <select name="schedule" id="schedule">
+    <select name="scheduleSelect" id="scheduleSelect">
         <?php foreach($projects as $project): ?>
           <option value="<?= $project['schedule_id']?>"><?= $project['schedule_id']?></option>
         <?php endforeach;?>
     </select>
-    <select>
+    <select name="projectSelect" id="projectSelect">
         <?php foreach($projects as $project): ?>
           <option value="<?= $project['project_id']?>"><?= $project['project_id']?></option>
         <?php endforeach;?>
     </select>
+    <button type="button" onclick="updateView()">View</button>
     </nav>
 
     <table class="table table-dark table-striped">
@@ -121,9 +122,8 @@ foreach ($projects as $project){
             <th scope="col">USER</th>
             <th scope="col">SCHEDULE</th>
             <th scope="col">PROJECT</th>
-            <th scope="col">TIMELINE</th>
-            <th scope="col">DATA_POINT</th>
-            <th scope="col">DATA_POINT</th>
+            <th scope="col">START</th>
+            <th scope="col">FINISH</th>
           </tr>
         </thead>
         <tbody>
@@ -132,7 +132,8 @@ foreach ($projects as $project){
               <td><strong><?= $project['user_name']?></strong></td>
               <td><strong><?= $project['schedule_id'] . ":"?></strong></td>
               <td><strong><?= $project['project_id']?></strong></td>
-              <td><?= $project['timeline']?></td>
+              <td><?= $project['start_d']?></td>
+              <td><?= $project['end_d']?></td>
             </tr> 
             <?php endforeach; ?>
         </tbody>

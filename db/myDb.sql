@@ -40,7 +40,8 @@ CREATE TABLE projects (
     schedule_id VARCHAR(255) NOT NULL REFERENCES schedules(schedule_id),
     project_id VARCHAR(255) NOT NULL UNIQUE PRIMARY KEY,
     description VARCHAR(255) NOT NULL,
-    timeline timing
+    start_d DATE NOT NULL,
+    end_d DATE NOT NULL
 );
 
 --Create data points table --
@@ -48,7 +49,12 @@ CREATE TABLE data_points (
     id SERIAL NOT NULL,
     user_name VARCHAR NOT NULL REFERENCES profiles(user_name),
     project_id VARCHAR(255) NOT NULL REFERENCES projects(project_id),
-    data_point data_p
+    title VARCHAR(255),
+    description VARCHAR(255),
+    data_d DATE,
+    attach1 VARCHAR(255),
+    attach2 VARCHAR(255),
+    attach3 VARCHAR(255)
 );
 -----------TABLES-----------
 
@@ -61,18 +67,11 @@ INSERT INTO profiles (user_name, password) VALUES ('TEST_USER', 'TEST_PASSWORD')
 INSERT INTO schedules (user_name, schedule_id) VALUES ('TEST_USER', 'TEST_SCHEDULE_1');
 
 --Insert Project--
-INSERT INTO projects (user_name, schedule_id, project_id, description, timeline) VALUES ('TEST_USER', 'TEST_SCHEDULE_1', 'TEST_PROJECT_1', 'TEST_DESCRIPTION_1', '(01-01-2020, 12-12-2021)');
+INSERT INTO projects (user_name, schedule_id, project_id, description, start_d, end_d) VALUES ('TEST_USER', 'TEST_SCHEDULE_1', 'TEST_PROJECT_1', 'TEST_DESCRIPTION_1', '01-01-2020', '12-12-2021');
 
 --Insert Data Points (3)--
-INSERT INTO data_points (user_name, project_id, data_point) VALUES 
-    ('TEST_USER', 'TEST_PROJECT_1', '(TEST_DATA_POINT_1, POINT_1_DESC, 03-06-2020, TEST1.jpg, TEST2.jpg, TEST3.txt)'),
-    ('TEST_USER', 'TEST_PROJECT_1', '(TEST_DATA_POINT_2, POINT_2_DESC, 06-06-2020, TEST1.jpg, TEST2.jpg, TEST3.txt)'),
-    ('TEST_USER', 'TEST_PROJECT_1', '(TEST_DATA_POINT_3, POINT_3_DESC, 09-06-2020, TEST1.jpg, TEST2.jpg, TEST3.txt)');
-
-    --test--
-INSERT INTO data_points (user_name, project_id, data_point) VALUES 
-('TEST_USER', 'TEST_PROJECT_1', '(TEST_DATA_POINT_X, POINT_X_DESC, 03-06-2020, TEST1.jpg, TEST2.jpg, TEST3.txt)');  
-
-
-
+INSERT INTO data_points (user_name, project_id, title, description, data_d, attach1, attach2, attach3) VALUES 
+    ('TEST_USER', 'TEST_PROJECT_1', 'TEST_DATA_POINT_1', 'POINT_1_DESC', '03-06-2020', 'TEST1.jpg', 'TEST2.jpg', 'TEST3.txt'),
+    ('TEST_USER', 'TEST_PROJECT_1', 'TEST_DATA_POINT_2', 'POINT_2_DESC', '06-06-2020', 'TEST1.jpg', 'TEST2.jpg', 'TEST3.txt'),
+    ('TEST_USER', 'TEST_PROJECT_1', 'TEST_DATA_POINT_3', 'POINT_3_DESC', '09-06-2020', 'TEST1.jpg', 'TEST2.jpg', 'TEST3.txt');
 -----------INSERT-----------
