@@ -18,6 +18,8 @@ $schedule = $_POST['schedule'];
   
   $stmt->execute();
 
+  die();
+
   $project = $_POST['project'];
   $description_project = $_POST['description_project'];
   $startDate = $_POST['startDate'];
