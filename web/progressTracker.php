@@ -42,14 +42,6 @@ else {
 $stmt->execute();
 $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-//var_dump($projects);
-//echo "/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n NEW VAR DUMP";
-foreach ($projects as $project){
-  //var_dump($project);
-  //echo "new project <br>";
-}
-
-
 ?>
 
 <!DOCTYPE html>
@@ -67,18 +59,16 @@ foreach ($projects as $project){
 </head>
 <body>
     <h1>Progress Bar</h1>
-    <form action="progressTracker.php" method="GET">
-    <input type="text" name="search">
-    <button type="submit">Submit User (*try TEST_USER)</button>
-    </form>
-
     <form id="updateForm" action="" method="POST">
       
       <!--Header -->
+      <p>Instructions STEP01: Enter any data you wish into this form. When you click <code>ADD/UPDATE SETTINGS</code>
+      <br> It will update the database via ajax and you can retrieve it by following STEP 02.
+      <br>**At this point in design, all fields must be filled out**</p>
       <input type="text" id="username" value="<?= $username?>" name="username" style="display:none">
       <label for="schedule">Schedule Name: </label>
       <input type="text" id="schedule"name="schedule" value="">
-      <label for="project">Project Name: </label>
+      <label for="project" style="background-color:red">Project Name: </label>
       <input type="text" id="project" name="project" value="">
       <label for="desc_proj">Project Description: </label>
       <input name="description" id="description_project" value="" placeholder="Description..."></textarea>
@@ -105,13 +95,16 @@ foreach ($projects as $project){
     
     <button type="button" id="updateButton" onclick="postQuery()">Add/Update settings</button>
     </form>
+    <p>BEFORE STEP 02, remember the <code>project name</code> you input in the form. When you <b>refresh<b> the page you will be able to select that project in the project drop down menu below</p>
     
     <nav class="nav"> 
+    <label for="scheduleSelect">Schedule: (Don't worry about this selector)</label>
     <select name="scheduleSelect" id="scheduleSelect">
         <?php foreach($projects as $project): ?>
           <option value="<?= $project['schedule_id']?>"><?= $project['schedule_id']?></option>
         <?php endforeach;?>
     </select>
+    <label for="projectSelect" style="background-color:red">Project: ( STEP 02: Select the project name you entered above, click VIEW to see your data displayed at bottom of the page)</label>
     <select name="projectSelect" id="projectSelect">
         <?php foreach($projects as $project): ?>
           <option value="<?=$project['project_id']?>"><?=$project['project_id']?></option>
