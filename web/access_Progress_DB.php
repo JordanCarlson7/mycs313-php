@@ -8,7 +8,7 @@ foreach ($_POST as $key => $value){
 $username = $_POST['username'];
 $schedule = $_POST['schedule'];
 
-$stmt = $db->prepare('SELECT * FROM data_points INNER JOIN projects ON data_points.user_name = projects.user_name WHERE projects.user_name = :username');
+$stmt = $db->prepare('SELECT * FROM data_points INNER JOIN projects ON data_points.project_id = projects.project_id WHERE projects.user_name = :username');
 
 $stmt->bindValue(':username', $username, PDO::PARAM_STR);
 $stmt->execute();
