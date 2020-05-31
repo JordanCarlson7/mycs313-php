@@ -6,7 +6,7 @@ foreach ($_POST as $key => $value){
   //echo $key . ": " . $value;
 }
   
-$stmt = $db->prepare('SELECT title, description, data_d, attach1, attach2, attach3 FROM data_points WHERE data_points.user_name = :user_name AND data_points.project_id = :project_id');
+$stmt = $db->prepare('SELECT title, description, data_d, attach1, attach2, attach3 FROM data_points WHERE user_name = :user_name AND project_id = :project_id');
 $stmt->bindValue(':user_name', $username, PDO::PARAM_STR);
 $stmnt->bindValue(':project_id', $project, PDO::PARAM_STR);
 
