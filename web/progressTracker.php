@@ -109,9 +109,12 @@ foreach ($projects as $project){
         <?php endforeach;?>
     </select>
     <select name="projectSelect" id="projectSelect">
-        <?php foreach($projects as $project): ?>
-          <option value="<?= $project['project_id']?>"><?= $project['project_id']?></option>
-        <?php endforeach;?>
+        <?php foreach($projects as $project) {
+          $a = $project['project_id'];
+          $b = $project['project_id'];
+          echo "<option value=" . $a . ">" . $b . "</option>";
+        }
+          ?>
     </select>
     <button type="button" onclick="updateView()">View</button>
     </nav>
