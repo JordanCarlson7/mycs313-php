@@ -24,11 +24,11 @@ function request(postData, url){
   
   function updateView(){
     let username = document.getElementById('username').value;   
-    let scheduleE = document.getElementById('scheduleSelect');
-    let schedule = scheduleE.options[scheduleE.selectedIndex].value;
+    //let scheduleE = document.getElementById('scheduleSelect');
+    //let schedule = scheduleE.options[scheduleE.selectedIndex].value;
     let projectE = document.getElementById('projectSelect');
     let project = projectE.options[projectE.selectedIndex].value;
-    let query = "username=" + username + "&schedule=" + schedule + "&project=" + project;
+    let query = "username=" + username + "&project=" + project;
     console.log(query);
     request(query, 'access_Progress_DB.php'); 
   }

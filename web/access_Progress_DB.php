@@ -6,7 +6,7 @@ foreach ($_POST as $key => $value){
 }
 
 $username = $_POST['username'];
-$schedule = $_POST['schedule'];
+//$schedule = $_POST['schedule'];
 $project = $_POST['project'];
 
 $stmt = $db->prepare('SELECT * FROM data_points INNER JOIN projects ON data_points.project_id = projects.project_id WHERE projects.user_name = :username AND projects.project_id = :project_id');
