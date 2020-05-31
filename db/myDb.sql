@@ -75,3 +75,10 @@ INSERT INTO data_points (user_name, project_id, title, description, data_d, atta
     ('TEST_USER', 'TEST_PROJECT_1', 'TEST_DATA_POINT_2', 'POINT_2_DESC', '06-06-2020', 'TEST1.jpg', 'TEST2.jpg', 'TEST3.txt'),
     ('TEST_USER', 'TEST_PROJECT_1', 'TEST_DATA_POINT_3', 'POINT_3_DESC', '09-06-2020', 'TEST1.jpg', 'TEST2.jpg', 'TEST3.txt');
 -----------INSERT-----------
+
+
+--JOIN--
+SELECT * FROM data_points INNER JOIN projects ON data_points.user_name = projects.user_name;
+
+--get all data points
+SELECT * FROM data_points INNER JOIN projects ON data_points.user_name = projects.user_name WHERE projects.user_name = :username;

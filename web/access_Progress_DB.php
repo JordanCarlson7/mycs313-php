@@ -16,6 +16,6 @@ $stmnt->bindValue(':project_id', $project, PDO::PARAM_STR);
 $stmt->execute();
 $datas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-$returnString = json_encode($datas);
-echo $returnString;
+//$returnString = json_encode($datas);
+//echo $returnString;
 ?>

@@ -33,14 +33,14 @@ if (!$loggedIn) {
   $stmt = $db->prepare('');
 } 
 else {
-  $stmt = $db->prepare('SELECT * FROM profiles, schedules, projects WHERE profiles.user_name = :user_name AND profiles.password = :password');
+  $stmt = $db->prepare('SELECT * FROM profiles INNER JOIN projects ON profiles.user_name = projects.user_name WHERE projects.user_name = :username');
   $stmt->bindValue(':user_name', $username, PDO::PARAM_STR);
-  $stmt->bindValue(':password', $password, PDO::PARAM_STR);
+  //$stmt->bindValue(':password', $password, PDO::PARAM_STR);
 }
 
 
 $stmt->execute();
-$projects = $stmt->fetch(PDO::FETCH_ASSOC);
+$projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 //var_dump($projects);
 //echo "/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n NEW VAR DUMP";
@@ -113,12 +113,9 @@ foreach ($projects as $project){
         <?php endforeach;?>
     </select>
     <select name="projectSelect" id="projectSelect">
-        <?php foreach($projects as $project) {
-          $a = $project['project_id'];
-          $b = $project['project_id'];
-          echo "<option value=" . $a . ">" . $b . "</option>";
-        }
-          ?>
+        <?php foreach($projects as $project): ?>
+          <option value="<?=$project['project_id']?>"><?=$project['project_id']?></option>
+        <?php endforeach; ?>
     </select>
     <button type="button" onclick="updateView()">View</button>
     </nav>
