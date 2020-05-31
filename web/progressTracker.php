@@ -98,7 +98,7 @@ $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <p>BEFORE STEP 02, remember the <code>project name</code> you input in the form. When you <b>refresh</b> the page you will be able to select that project in the project drop down menu below</p>
     
     <nav class="nav"> 
-    <label for="scheduleSelect" style="display:hidden">Schedule: (Don't worry about this selector)</label>
+    <label for="scheduleSelect" style="display:hidden"></label>
     <select name="scheduleSelect" style="display:hidden" id="scheduleSelect">
         <?php foreach($projects as $project): ?>
           <option value="<?= $project['schedule_id']?>"><?= $project['schedule_id']?></option>
