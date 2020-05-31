@@ -93,7 +93,7 @@ foreach ($projects as $project){
       <label for="title">Name: </label>
       <input type="text" name="title" id="title" value=""> 
       <label for="description">Description: </label>
-      <input type="text" name="description_data" id="description"> 
+      <input type="text" name="description_data" id="description_data"> 
       <label for="data_d">Date: </label>
       <input type="date" name="data_d" id="data_d" value="">
       <label type="text" for="attach1">Attachment 1</label>
