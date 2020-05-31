@@ -13,9 +13,9 @@
 <body>
     <h1>Log in</h1>
     <form action="progressTracker.php" method="POST">
-    <label for="username">Username:</label>
+    <label for="username">Username: (enter TEST_USER)</label>
     <input type="text" value="" name="username" id="username" placeholder="User">
-    <label for="password">Password:</label>
+    <label for="password">Password: (enter TEST_PASSWORD)</label>
     <input type="text" value="" name="password" id="password" placeholder="Password">
     <input type="submit">Submit</input>
     <button type="reset">Reset</button>
