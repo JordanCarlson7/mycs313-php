@@ -32,7 +32,7 @@ $schedule = $_POST['schedule'];
   $stmt1->bindValue(':timelineEnd', $endDate, PDO::PARAM_STR);
   
   
-  $stmt2->execute();
+  $stmt1->execute();
 
   $title = $_POST['title'];
   $description_dataPoint = $_POST['description_data'];
