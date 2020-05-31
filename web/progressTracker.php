@@ -34,7 +34,7 @@ if (!$loggedIn) {
 } 
 else {
   $stmt = $db->prepare('SELECT * FROM profiles INNER JOIN projects ON profiles.user_name = projects.user_name WHERE projects.user_name = :username');
-  $stmt->bindValue(':user_name', $username, PDO::PARAM_STR);
+  $stmt->bindValue(':username', $username, PDO::PARAM_STR);
   //$stmt->bindValue(':password', $password, PDO::PARAM_STR);
 }
 
@@ -45,8 +45,8 @@ $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
 //var_dump($projects);
 //echo "/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n NEW VAR DUMP";
 foreach ($projects as $project){
-  var_dump($project);
-  echo "new project <br>";
+  //var_dump($project);
+  //echo "new project <br>";
 }
 
 
