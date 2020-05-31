@@ -8,7 +8,10 @@ function request(postData, url){
         if (this.readyState == 4 && this.status == 200) {
             console.log("made it");
             console.log(xhttp.responseText);
-            formatView(JSON.parse(xhttp.responseText));
+            if (xhttp.responseText != "") {
+                formatView(JSON.parse(xhttp.responseText));
+            }
+            
         }
       };
       
