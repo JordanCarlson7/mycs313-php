@@ -96,14 +96,8 @@ $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <button type="button" id="updateButton" onclick="postQuery()">Add/Update settings</button>
     </form>
     <p>BEFORE STEP 02, remember the <code>project name</code> you input in the form. When you <b>refresh</b> the page you will be able to select that project in the project drop down menu below</p>
-    
+    <br>
     <nav class="nav"> 
-    <label for="scheduleSelect" style="display:hidden"></label>
-    <select name="scheduleSelect" style="display:hidden" id="scheduleSelect">
-        <?php foreach($projects as $project): ?>
-          <option value="<?= $project['schedule_id']?>"><?= $project['schedule_id']?></option>
-        <?php endforeach;?>
-    </select>
     <br><br>
     <label for="projectSelect" style="background-color:red">Project: ( STEP 02: Select the project name you entered above, click VIEW to see your data displayed at bottom of the page)</label>
     <select name="projectSelect" id="projectSelect">
