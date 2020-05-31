@@ -43,9 +43,9 @@ $stmt->execute();
 $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 var_dump($projects);
-echo "/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n NEW VAR DUMP";
+//echo "/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n NEW VAR DUMP";
 foreach ($projects as $project){
-  var_dump($project);
+//  var_dump($project);
   echo "new project /n";
 }
 
