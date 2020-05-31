@@ -40,7 +40,7 @@ else {
 
 
 $stmt->execute();
-$projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$projects = $stmt->fetch(PDO::FETCH_ASSOC);
 
 //var_dump($projects);
 //echo "/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n NEW VAR DUMP";
