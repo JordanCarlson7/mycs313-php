@@ -22,7 +22,7 @@ $db = getDB();
 
   //echo "user: " . $username;
   //echo "sched " . $schedule;
-  /*
+  
   $stmt = $db->prepare('INSERT INTO schedules (user_name, schedule_id) VALUES (:username, :schedule)');
   $stmt->bindValue(':username', $username, PDO::PARAM_STR);
   $stmt->bindValue(':schedule', $schedule, PDO::PARAM_STR);
@@ -37,7 +37,7 @@ $db = getDB();
   $stmt1->bindValue(':timelineStart', $startDate, PDO::PARAM_STR);
   $stmt1->bindValue(':timelineEnd', $endDate, PDO::PARAM_STR);
   $stmt1->execute();
-*/
+
 
   $stmt2 = $db->prepare('INSERT INTO data_points (user_name, project_id, title, description, data_d, attach1, attach2, attach3) VALUES (:username, :project_id, :title, :description_data, :data_d, :attach1, :attach2, :attach3)');
   $stmt2->bindValue(':username', $username, PDO::PARAM_STR);
