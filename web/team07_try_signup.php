@@ -11,8 +11,13 @@ const MSG_NO_ENTRY = "No username or password entered! Please enter a username a
 const MSG_INV_PWD  = "Invalid password";
 const MSG_INV_USR  = "Invalid username";
 const MSG_INV_USR_EXISTS  = "Invalid username. User already exists!";
+const MSG_PWD_NOT_MATCH  = "Passwords don't match!";
+
 
 function check_valid_pwd($password) {
+    if (!preg_match('^(?=\D*\d)[\w\d]{7,}$', $password)) {
+        return false;
+    }
     return true;
 }
 
@@ -30,12 +35,19 @@ function send_response($code, $msg) {
 $db = getDB();
 
 // Verify username and password were received
-if (!isset($_POST['password']) || !isset($_POST['username'])) {
+if (!isset($_POST['password']) || !isset($_POST['username']) || !isset($_POST['verify_password'])) {
     send_response(CODE_NO_ENTRY, MSG_NO_ENTRY);
     die();
 }
 
 $raw_password = $_POST['password'];
+$verify = $_POST['verify_password'];
+
+// Verify passwords match
+if ($raw_password != $verify) {
+    send_response(CODE_INV_PWD, MSG_PWD_NOT_MATCH);
+    die();
+}
 
 // Verify the password is valid
 if (!check_valid_pwd($raw_password)) {

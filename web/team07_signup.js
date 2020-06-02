@@ -1,4 +1,4 @@
-function verify_signup(username_ID, password_ID, message_ID) {
+function verify_signup(username_ID, password_ID, verify_ID, message_ID) {
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
@@ -24,8 +24,9 @@ function verify_signup(username_ID, password_ID, message_ID) {
 
     let username = document.getElementById(username_ID).value;
     let password = document.getElementById(password_ID).value;
+    let verify = document.getElementById(verify_ID).value;
     xhttp.open("POST", "team07_try_signup.php", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("username=" + username + "&password=" + password);
+    xhttp.send("username=" + username + "&password=" + password + "&verify_password=" + verify);
     return false;
 }
