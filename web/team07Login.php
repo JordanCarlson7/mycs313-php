@@ -35,6 +35,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header('location: /team07Welcome.php');
         exit;
     }
+
+    $msg = 'Password does not match.';
 }
 
 ?>
@@ -49,9 +51,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <body>
   <h1>Log in</h1>
+  <?php if (isset($msg)) echo '<div>'.$msg.'</div>';?>
   <form action="team07Login.php" method="POST">
     <label for="username">Username: </label>
-    <input type="text" value="" name="username" id="username" placeholder="User">
+    <input type="text" value="<?php if (isset($username)) echo $username;?>" name="username" id="username" placeholder="User">
     <label for="password">Password: </label>
     <input type="text" value="" name="password" id="password" placeholder="Password">
     <input type="submit">

@@ -5,7 +5,7 @@ function verify_signup(username_ID, password_ID, message_ID) {
             let response = JSON.parse(this.responseText);
 
             let response_code = response.code;
-            let msg = response.message;
+            let msg = response.msg;
 
             // Give the user the response message
             document.getElementById(message_ID).innerText = msg;
@@ -23,5 +23,6 @@ function verify_signup(username_ID, password_ID, message_ID) {
     let username = document.getElementById(username_ID).value;
     let password = document.getElementById(password_ID).value;
     xhttp.open("POST", "team07_try_signup.php", true);
-    xhttp.send("username=" + username + "&password=" + password + "&");
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("username=" + username + "&password=" + password);
 }
