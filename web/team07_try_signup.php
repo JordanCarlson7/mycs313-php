@@ -1,4 +1,6 @@
 <?php
+require 'accessDB.php';
+
 const CODE_SUCCESS  = 1;
 const CODE_NO_ENTRY = 2;
 const CODE_INV_PWD  = 3;
@@ -23,9 +25,11 @@ function send_response($code, $msg) {
     echo $response;
 }
 
-require 'accessDB.php';
+
+// Get the database
 $db = getDB();
 
+// Verify username and password were received
 if (!isset($_POST['password']) || !isset($_POST['username'])) {
     send_response(CODE_NO_ENTRY, MSG_NO_ENTRY);
     die();
@@ -33,17 +37,20 @@ if (!isset($_POST['password']) || !isset($_POST['username'])) {
 
 $raw_password = $_POST['password'];
 
+// Verify the password is valid
 if (!check_valid_pwd($raw_password)) {
     send_response(CODE_INV_PWD, MSG_INV_PWD);
     die();
 }
 
+// Verify the username is valid
 $username = $_POST['username'];
 if (!check_valid_username($username)) {
     send_response(CODE_INV_USR, MSG_INV_USR);
     die();
 }
 
+// Hash the password
 $hashed_password = password_hash($raw_password, PASSWORD_DEFAULT);
 
 // Verify there isn't a user with that name
@@ -59,5 +66,8 @@ if (count($stmt->fetchAll(PDO::FETCH_ASSOC)) > 0) {
 
 // Success, add username and hashed password to DB
 send_response(CODE_SUCCESS, MSG_SUCCESS);
-$query = "INSERT INTO users (username, ";
+$query = "INSERT INTO users (username, password) VALUES (:username, :password)";
+$stmt = $db->prepare($query);
+$stmt->execute([':username' => $username, ':password' => $hashed_password]);
 
+die();

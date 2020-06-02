@@ -17,7 +17,8 @@ if (isset($_SESSION['user_id'])) {
 </head>
 <body>
 <h1>Sign up</h1>
-<form onsubmit="verify_signup('username', 'password')">
+<p id='signup_message'></p>
+<form onsubmit="verify_signup('username', 'password', 'signup_message')">
     <label for="username">Username: </label><input type="text" id="username" required><br/><br/>
     <label for="password">Password: </label><input type="text" id="password" required><br/>
     <button type="submit">Submit</button>

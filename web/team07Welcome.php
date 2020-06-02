@@ -18,7 +18,9 @@ $username = null;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+
 <h1>Welcome to Week 7's assignment</h1>
 <h3 id="welcome_user">Your User name is: <?= $username ?>!</h3>
+
 </body>
 </html>

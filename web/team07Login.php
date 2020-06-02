@@ -31,6 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($checkPassword) {
         $_SESSION['user_id'] = $user['id'];
+        $_SESSION['user'] = $user;
         header('location: /team07Welcome.php');
         exit;
     }
@@ -55,6 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <input type="text" value="" name="password" id="password" placeholder="Password">
     <input type="submit">
     <button type="reset">Reset</button>
+    <a href="team07SignUp.php">Sign up</a>
   </form>
 </body>
 
