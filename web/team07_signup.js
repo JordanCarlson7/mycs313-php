@@ -1,6 +1,6 @@
 
 function check_valid_pwd(password) {
-    if (password.match('/^(?=\D*\d)[\w\d]{7,}$/') != password) {
+    if (password.match(/^(?=\D*\d)[\w\d]{7,}$/) !== password) {
         return false;
     }
     return true;
@@ -16,8 +16,9 @@ function verify_signup(username_ID, password_ID, verify_ID, message_ID) {
     let verify = document.getElementById(verify_ID).value;
 
     if (!check_valid_pwd(password) || !check_valid_username(username)
-    || password != verify) {
-        document.getElementById(message_ID).innerText = "Invalid Usrname or Password";
+    || password !== verify) {
+        document.getElementById(message_ID).innerText = "Invalid Username or Password";
+        return false;
     }
 
     let xhttp = new XMLHttpRequest();
