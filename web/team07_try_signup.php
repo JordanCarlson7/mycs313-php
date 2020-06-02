@@ -15,7 +15,7 @@ const MSG_PWD_NOT_MATCH  = "Passwords don't match!";
 
 
 function check_valid_pwd($password) {
-    if (!preg_match('^(?=\D*\d)[\w\d]{7,}$', $password)) {
+    if (!preg_match('/^(?=\D*\d)[\w\d]{7,}$/', $password)) {
         return false;
     }
     return true;
