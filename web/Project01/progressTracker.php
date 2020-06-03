@@ -2,7 +2,6 @@
 require 'accessDB.php';
 $db = getDB();
 
-
 // $searchTerm = filter_var(INPUT_GET, 'search', FILTER_SANITIZE_STRING);\
 if (isset($_POST['username'])) {
   $username = $_POST['username'];
@@ -27,7 +26,6 @@ else {
   die();
 }
 
-
 //GET PROFILE DATA
 if (!$loggedIn) {
   $stmt = $db->prepare('');
@@ -37,7 +35,6 @@ else {
   $stmt->bindValue(':username', $username, PDO::PARAM_STR);
   //$stmt->bindValue(':password', $password, PDO::PARAM_STR);
 }
-
 
 $stmt->execute();
 $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
