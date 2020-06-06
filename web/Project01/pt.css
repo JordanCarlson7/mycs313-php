@@ -4,8 +4,9 @@
   'header header header header header'
   'left main main main main'
   'left main main main main'
-  'leftb mainb mainb mainb mainb'
-  'leftb mainb mainb mainb mainb'
+  'nav nav nav nav nav'
+  'mainb mainb mainb mainb mainb'
+  'mainb mainb mainb mainb mainb'
   'footer footer footer footer footer';
 }
 
@@ -63,8 +64,22 @@ h1{
 
 #dataTimeline {
   display: flex;
+  flex-direction: wrap;
+  grid-area: mainb;
   width: 100%;
   justify-content: space-evenly;
   margin: 5%;
 
+}
+
+.nav {
+  grid-area: nav;
+}
+
+.left{
+  float: left;
+}
+
+.right {
+  float: right;
 }

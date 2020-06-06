@@ -40,7 +40,7 @@ function postRequest(postData, url){
     for (var i = 0; i < response.length; i++){
         dataDiv += 
         `<div id="${response[i].title}" class="dataPoint">
-            <div class="dataHeader"><h3 class="left">${response[i].title}</h3><h3 class="right">${response[i].data_d}</h3></div>
+            <div class="dataHeader"><h4 class="left">${response[i].title}</h4><h4 class="right">${response[i].data_d}</h4></div>
             <p>${response[i].description}</p>
             <img src="../Photos${response[i].attach1}" alt="${response[i].attach1}">
             <img src="../Photos${response[i].attach2}" alt="${response[i].attach2}">

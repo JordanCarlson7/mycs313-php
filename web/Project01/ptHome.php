@@ -88,17 +88,6 @@ $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
       <input name="attach3" id="attach3" value=""> 
     
     <button type="button" id="updateButton" onclick="postUpdateQuery()">Add/Update settings</button>
-    </form>
-    <nav class="nav"> 
-    <br><br>
-    <label for="projectSelect" style="background-color:red"></label>
-    <select name="projectSelect" id="projectSelect">
-        <?php foreach($projects as $project): ?>
-          <option value="<?=$project['project_id']?>"><?=$project['project_id']?></option>
-        <?php endforeach; ?>
-    </select>
-    <button type="button" onclick="selectProgress()">View</button>
-    </nav>
 
     <table class="table table-dark table-striped">
         <thead>
@@ -122,6 +111,19 @@ $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <?php endforeach; ?>
         </tbody>
     </table>   
+
+    </form>
+    <nav class="nav"> 
+    <br><br>
+    <label for="projectSelect" style="background-color:red"></label>
+    <select name="projectSelect" id="projectSelect">
+        <?php foreach($projects as $project): ?>
+          <option value="<?=$project['project_id']?>"><?=$project['project_id']?></option>
+        <?php endforeach; ?>
+    </select>
+    <button type="button" onclick="selectProgress()">View</button>
+    </nav>
+
     <div id="table"></div>
     <div id="dataPointBars">
         
