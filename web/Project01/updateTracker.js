@@ -69,12 +69,28 @@ function postUpdateQuery(child) {
 
 }
 
+function postSingleUpdateQuery(child) {
+  let form = document.getElementById(child).parentElement;
+  let query = '';
+  let projectE = document.getElementById('projectSelect');
+  let project = projectE.options[projectE.selectedIndex].value;
+  let inputs = form.getElementsByTagName('input');
+  for(let element of inputs) {
+      query += element.id + "=" + element.value + "&"; 
+  } 
+  query += "projectp=" + project + "&"; 
+  query += "delete=false";
+  postRequest(query, "DB_singleDataAJAX.php");
+  selectProgress();
+
+}
+
 function removeItem(elementId){
   let username = document.getElementById('username').value;
   let element = document.getElementById(elementId).parentElement;
   element.style.display = "hidden";
   let query = "username=" + username + "&" + "dataPointDelete=" + elementId;
-  postRequest(query, "DB_updateAJAX.php");
+  postRequest(query, "DB_singleDataAJAX.php");
   selectProgress();
 
 }

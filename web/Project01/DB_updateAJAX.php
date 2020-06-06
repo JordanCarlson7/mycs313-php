@@ -7,10 +7,6 @@ $db = getDB();
       //echo $key . ": " . $value;
   }
 
-  if (isset($_POST['dataPointDelete'])){
-    deleteDataPoint($db);
-    die();
-  }
   if ($_POST['schedule'] != ""){
     newSchedule($db);
   }
@@ -30,19 +26,6 @@ $db = getDB();
       newData($db, $project, $username, $title, $description_dataPoint, $data_d, $attach1, $attach2, $attach3);
     }
   }
-    if(isset($_POST['titlep'])){
-      if (isset($_POST['projectp'])){
-        $project = $_POST['projectp'];
-        $username = $_POST['usernamep'];
-        $title = $_POST['titlep'];
-        $description_dataPoint = $_POST['description_datap'];
-        $data_d = $_POST['data_dp'];
-        $attach1 = $_POST['attach1p'];
-        $attach2 = $_POST['attach2p'];
-        $attach3 = $_POST['attach3p'];
-      }
-      newData($db, $project, $username, $title, $description_dataPoint, $data_d, $attach1, $attach2, $attach3);
-    }
   
 
   function newSchedule($db){
@@ -86,14 +69,5 @@ $db = getDB();
   $stmt2->execute();  
   }
 
-  function deleteDataPoint($db){
-  $username = $_POST['username'];
-  $dataPointDelete = $_POST['dataPointDelete'];
-
-  $stmt3 = $db->prepare('DELETE FROM data_points WHERE user_name = :username AND title = :dataTitle');
-  $stmt3->bindValue(':username', $username, PDO::PARAM_STR);
-  $stmt3->bindValue(':dataTitle', $dataPointDelete, PDO::PARAM_STR);
-  $stmt3->execute();
-  }
-
+  
 ?>
