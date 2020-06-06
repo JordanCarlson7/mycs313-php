@@ -29,6 +29,7 @@ $db = getDB();
       $attach3 = $_POST['attach3'];
       newData($db, $project, $username, $title, $description_dataPoint, $data_d, $attach1, $attach2, $attach3);
     }
+  }
     if(isset($_POST['titlep'])){
       if (isset($_POST['projectp'])){
         $project = $_POST['projectp'];
@@ -42,8 +43,7 @@ $db = getDB();
       }
       newData($db, $project, $username, $title, $description_dataPoint, $data_d, $attach1, $attach2, $attach3);
     }
-    
-  }
+  
 
   function newSchedule($db){
   $username = $_POST['username'];
