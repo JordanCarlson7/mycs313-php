@@ -45,7 +45,7 @@ function postRequest(postData, url){
             <img src="../Photos/${response[i].attach1}" alt="${response[i].attach1}">
             <img src="../Photos/${response[i].attach2}" alt="${response[i].attach2}">
             <img src="../Photos/${response[i].attach3}" alt="${response[i].attach3}">
-            <button type="button id="${response[i].title}" onclick="removeItem(this.id)">-</button>
+            <button type="button" id="${response[i].title}" onclick="removeItem(this.id)">-</button>
           </div>`
     }
     dataDiv += `</div>`
@@ -70,7 +70,7 @@ function postUpdateQuery(child) {
 
 function removeItem(elementId){
   let username = document.getElementById('username').value;
-  let element = document.getElementById(child).parentElement;
+  let element = document.getElementById(elementId).parentElement;
   element.style.display = "hidden";
   let query = "username=" + username + "&" + "dataPointDelete=" + elementId;
   postRequest(query, "DB_updateAJAX.php");
