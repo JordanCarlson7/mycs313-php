@@ -5,11 +5,10 @@ $db = getDB();
 
   if (isset($_POST['dataPointDelete'])){
     deleteDataPoint($db);
-    die();
+    
   }
 
-  if (isset($_POST['titlep']))
-  {
+  if (isset($_POST['titlep'])) {
     if (isset($_POST['projectp'])){
         $project = $_POST['projectp'];
         $username = $_POST['usernamep'];
