@@ -88,6 +88,7 @@ $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
       <input name="attach3" id="attach3" value=""> 
     
     <button type="button" id="updateButton" onclick="postUpdateQuery()">Add/Update settings</button>
+    </form>
 
     <table class="table table-dark table-striped">
         <thead>
@@ -104,7 +105,7 @@ $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <tr>
               <td><strong><?= $project['user_name']?></strong></td>
               <td><strong><?= $project['schedule_id'] . ":"?></strong></td>
-              <td><button type="button" onclick="display"><strong><?= $project['project_id']?></strong></td>
+              <td><strong><?= $project['project_id']?></strong></td>
               <td><?= $project['start_d']?></td>
               <td><?= $project['end_d']?></td>
             </tr> 
@@ -112,7 +113,7 @@ $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </tbody>
     </table>   
 
-    </form>
+    
     <nav class="nav"> 
     <br><br>
     <label for="projectSelect" style="background-color:red"></label>
