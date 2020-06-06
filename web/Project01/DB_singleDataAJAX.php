@@ -5,7 +5,7 @@ $db = getDB();
 
   if (isset($_POST['dataPointDelete'])){
     deleteDataPoint($db);
-    
+    die();
   }
 
   if (isset($_POST['titlep'])) {
