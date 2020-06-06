@@ -87,7 +87,7 @@ $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
       <label type="text" for="attach3">Attachment 3</label>
       <input name="attach3" id="attach3" value=""> 
     
-    <button type="button" id="updateButton" onclick="postUpdateQuery()">Add/Update settings</button>
+    <button type="button" id="updateButton" onclick="postUpdateQuery(this.id)">Add/Update settings</button>
     </form>
 
     <table class="table table-dark table-striped">
@@ -125,7 +125,25 @@ $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <button type="button" onclick="selectProgress()">View</button>
     </nav>
 
-    <div id="table"></div>
+     <!--Data Point-->
+     <form id="newDataPoint">
+     <label for="title">Name: </label>
+      <input type="text" name="title" id="title" value=""> 
+      <label for="description">Description: </label>
+      <input type="text" name="description_data" id="description_data"> 
+      <label for="data_d">Date: </label>
+      <input type="date" name="data_d" id="data_d" value="">
+      <label type="text" for="attach1">Attachment 1</label>
+      <input name="attach1" id="attach1" value="">
+      <label type="text" for="attach2">Attachment 2</label>
+      <input name="attach2" id="attach2" value="">
+      <label type="text" for="attach3">Attachment 3</label>
+      <input name="attach3" id="attach3" value=""> 
+    
+    <button type="button" id="updateDataPoints" onclick="postUpdateDataPoints(this.id)">Add/Update settings</button>
+    </form>
+
+
     <div id="dataPointBars">
         
     </div>          

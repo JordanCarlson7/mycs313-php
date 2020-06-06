@@ -5,8 +5,8 @@
   'left main main main main'
   'left main main main main'
   'nav nav nav nav nav'
-  'mainb mainb mainb mainb mainb'
-  'mainb mainb mainb mainb mainb'
+  'leftb mainb mainb mainb mainb'
+  'leftb mainb mainb mainb mainb'
   'footer footer footer footer footer';
 }
 
@@ -42,7 +42,7 @@ img{
   grid-area: left;
   flex-direction: column;
   justify-content: space-evenly;
-  width: 100%;
+  width: 30%;
   height: auto;
   bottom:0;
   background: rgba(0, 0, 0, 0.5);
@@ -67,12 +67,12 @@ h1{
   flex-direction: wrap;
   grid-area: mainb;
   width: 100%;
-  justify-content: space-evenly;
+  justify-content: space-around;
   margin: 5%;
 
 }
 
-.nav {
+nav {
   grid-area: nav;
 }
 
@@ -82,4 +82,13 @@ h1{
 
 .right {
   float: right;
+}
+
+h4{
+  font-size: 100%;
+}
+
+.dataPoint{
+  max-width: min-content;
+  margin: 10px;
 }

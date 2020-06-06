@@ -52,9 +52,9 @@ function postRequest(postData, url){
   }
 
 
-function postUpdateQuery() {
+function postUpdateQuery(child) {
+    let form = document.getElementById(child).parentElement;
     let query = '';
-    let form = document.getElementById('updateForm');
     let inputs = form.getElementsByTagName('input');
     for(let element of inputs) {
         query += element.id + "=" + element.value + "&"; 
