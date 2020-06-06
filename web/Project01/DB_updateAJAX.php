@@ -12,7 +12,7 @@ $db = getDB();
   if (isset($_POST['project'])){
     newProject($db);
   }
-  if(isset($_POST['title'])){
+  if(isset($_POST['title']) || isset($_POST['titlep'])){
     if (isset($_POST['project'])){
       $project = $_POST['project'];
       $username = $_POST['username'];
