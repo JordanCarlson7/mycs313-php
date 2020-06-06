@@ -6,6 +6,11 @@ $db = getDB();
   foreach($_POST as $key => $value){
       //echo $key . ": " . $value;
   }
+
+  if (isset($_POST['dataPointDelete'])){
+    deleteDataPoint($db);
+    die();
+  }
   if (isset($_POST['schedule'])){
     newSchedule($db);
   }
@@ -76,6 +81,16 @@ $db = getDB();
   $stmt2->bindValue(':attach2', $attach2, PDO::PARAM_STR);
   $stmt2->bindValue(':attach3', $attach3, PDO::PARAM_STR);
   $stmt2->execute();  
+  }
+
+  function deleteDataPoint($db){
+  $username = $_POST['username'];
+  $dataPointDelete = $_POST['dataPointDelete'];
+
+  $stmt3 = $db->prepare('DELETE FROM data_points WHERE user_name = :username AND title = :dataTitle');
+  $stmt3->bindValue(':username', $username, PDO::PARAM_STR);
+  $stmt3->bindValue(':dataTitle', $dataPointDelete, PDO::PARAM_STR);
+  $stmt3->execute();
   }
 
 ?>
