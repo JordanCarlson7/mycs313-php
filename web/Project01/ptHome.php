@@ -141,7 +141,7 @@ $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
       <label type="text" for="attach3">Attachment 3</label>
       <input name="attach3" id="attach3p" value=""> 
     
-    <button type="button" id="updateDataPoints" onclick="postUpdateDataPoints(this.id)">Add/Update settings</button>
+    <button type="button" id="updateDataPoints" onclick="postUpdateQuery(this.id)">Add/Update settings</button>
     </form>
 
 
