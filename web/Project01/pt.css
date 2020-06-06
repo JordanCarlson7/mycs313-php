@@ -24,8 +24,13 @@ img{
 
 }
 
+.dataPoint > img {
+  margin: 5%;
+  font-size: 2px;
+}
+
 img:hover {
-  transform: scale(10); 
+  transform: scale(5); 
   box-shadow: 1px 1px 10px black;
 }
 
@@ -84,7 +89,7 @@ h1{
 
 #dataTimeline {
   display: flex;
-  flex-direction: wrap;
+  flex-direction: column;
   grid-area: mainb;
   max-width: 100%;
   justify-content: space-around;
@@ -92,11 +97,16 @@ h1{
 
 }
 
+.dataPoint > button {
+  width: 25%;
+  float: right;
+}
+
 nav {
   grid-area: nav;
 }
 
-.left{
+.left {
   float: left;
 }
 
@@ -104,11 +114,11 @@ nav {
   float: right;
 }
 
-h4{
+h4 {
   font-size: 100%;
 }
 
-.dataPoint{
-  max-width: min-content;
+.dataPoint {
+  max-width: 100%;
   margin: 10px;
 }

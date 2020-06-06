@@ -65,6 +65,7 @@ function postUpdateQuery(child) {
     query += "projectp=" + project + "&"; 
     query += "delete=false";
     postRequest(query, "DB_updateAJAX.php");
+    selectProgress();
 
 }
 
@@ -74,5 +75,6 @@ function removeItem(elementId){
   element.style.display = "hidden";
   let query = "username=" + username + "&" + "dataPointDelete=" + elementId;
   postRequest(query, "DB_updateAJAX.php");
+  selectProgress();
 
 }
