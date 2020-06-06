@@ -1,5 +1,5 @@
 <?php
-require 'accessDB.php';
+require '../accessDB.php';
 $db = getDB();
 
 // $searchTerm = filter_var(INPUT_GET, 'search', FILTER_SANITIZE_STRING);\
