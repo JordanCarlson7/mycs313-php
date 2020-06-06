@@ -11,14 +11,14 @@ $db = getDB();
     deleteDataPoint($db);
     die();
   }
-  if (isset($_POST['schedule'])){
+  if ($_POST['schedule'] != ""){
     newSchedule($db);
   }
-  if (isset($_POST['project'])){
+  if ($_POST['project'] != ""){
     newProject($db);
   }
-  if(isset($_POST['title'])){
-    if (isset($_POST['project'])){
+  if($_POST['title'] != ""){
+    if ($_POST['project'] != ""){
       $project = $_POST['project'];
       $username = $_POST['username'];
       $title = $_POST['title'];
