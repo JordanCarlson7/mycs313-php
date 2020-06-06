@@ -128,6 +128,7 @@ $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
      <!--Data Point-->
      <form id="newDataPoint">
        <h3>Add New Data Point</h3>
+       <input type="text" id="usernamep" value="<?= $username?>" name="usernamep" style="display:none">
      <label for="title">Name: </label>
       <input type="text" name="title" id="titlep" value=""> 
       <label for="description">Description: </label>
