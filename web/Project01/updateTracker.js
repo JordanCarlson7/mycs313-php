@@ -42,9 +42,9 @@ function postRequest(postData, url){
         `<div id="${response[i].title}" class="dataPoint">
             <div class="dataHeader"><h4 class="left">${response[i].title}</h4><h4 class="right">${response[i].data_d}</h4></div>
             <p>${response[i].description}</p>
-            <img src="../Photos${response[i].attach1}" alt="${response[i].attach1}">
-            <img src="../Photos${response[i].attach2}" alt="${response[i].attach2}">
-            <img src="../Photos${response[i].attach3}" alt="${response[i].attach3}">
+            <img src="../Photos/${response[i].attach1}" alt="${response[i].attach1}">
+            <img src="../Photos/${response[i].attach2}" alt="${response[i].attach2}">
+            <img src="../Photos/${response[i].attach3}" alt="${response[i].attach3}">
           </div>`
     }
     dataDiv += `</div>`
@@ -55,10 +55,13 @@ function postRequest(postData, url){
 function postUpdateQuery(child) {
     let form = document.getElementById(child).parentElement;
     let query = '';
+    let projectE = document.getElementById('projectSelect');
+    let project = projectE.options[projectE.selectedIndex].value;
     let inputs = form.getElementsByTagName('input');
     for(let element of inputs) {
         query += element.id + "=" + element.value + "&"; 
-    }  
+    } 
+    query += "projectp=" + project + "&"; 
     query += "delete=false";
     postRequest(query, "DB_updateAJAX.php");
 

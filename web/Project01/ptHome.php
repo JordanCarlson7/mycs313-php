@@ -57,7 +57,7 @@ $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <body class="mainBody">
     <h1>Progress Bar</h1>
     <form id="updateForm" action="" method="POST">
-      
+      <h3>Add New Project w/1 Data Point</h3>
       <!--Header -->
       <input type="text" id="username" value="<?= $username?>" name="username" style="display:none">
       <label for="schedule">Schedule Name: </label>
@@ -127,18 +127,19 @@ $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
      <!--Data Point-->
      <form id="newDataPoint">
+       <h3>Add New Data Point</h3>
      <label for="title">Name: </label>
-      <input type="text" name="title" id="title" value=""> 
+      <input type="text" name="title" id="titlep" value=""> 
       <label for="description">Description: </label>
-      <input type="text" name="description_data" id="description_data"> 
+      <input type="text" name="description_data" id="description_datap"> 
       <label for="data_d">Date: </label>
-      <input type="date" name="data_d" id="data_d" value="">
+      <input type="date" name="data_d" id="data_dp" value="">
       <label type="text" for="attach1">Attachment 1</label>
-      <input name="attach1" id="attach1" value="">
-      <label type="text" for="attach2">Attachment 2</label>
-      <input name="attach2" id="attach2" value="">
+      <input name="attach1" id="attach1p" value="">
+      <label type="text" for="attach2p">Attachment 2</label>
+      <input name="attach2" id="attach2p" value="">
       <label type="text" for="attach3">Attachment 3</label>
-      <input name="attach3" id="attach3" value=""> 
+      <input name="attach3" id="attach3p" value=""> 
     
     <button type="button" id="updateDataPoints" onclick="postUpdateDataPoints(this.id)">Add/Update settings</button>
     </form>

@@ -42,7 +42,20 @@ img{
   grid-area: left;
   flex-direction: column;
   justify-content: space-evenly;
-  width: 30%;
+  width: 100%;
+  height: auto;
+  bottom:0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  padding: 20px;
+}
+
+#newDataPoint{
+  display: flex;
+  grid-area: leftb;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
   height: auto;
   bottom:0;
   background: rgba(0, 0, 0, 0.5);

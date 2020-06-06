@@ -13,7 +13,13 @@ $db = getDB();
     newProject($db);
   }
   if(isset($_POST['title'])){
-    newData($db);
+    if (isset($_POST['project'])){
+      $project = $_POST['project'];
+    }
+    else if (isset($_POST['projectp'])){
+      $project = $_POST['projectp'];
+    }
+    newData($db, $project);
   }
 
   function newSchedule($db){
@@ -45,9 +51,8 @@ $db = getDB();
   }
 
 
-  function newData($db){
+  function newData($db, $project){
   $username = $_POST['username'];
-  $project = $_POST['project'];
   $title = $_POST['title'];
   $description_dataPoint = $_POST['description_data'];
   $data_d = $_POST['data_d'];
