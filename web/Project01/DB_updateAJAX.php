@@ -1,6 +1,6 @@
 <?php
-/*NO ECHO*/
-require 'accessDB.php';
+/*NO ECHO pg is ajax requested*/
+require '../accessDB.php';
 $db = getDB();
 
     foreach($_POST as $key => $value){

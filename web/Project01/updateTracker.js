@@ -1,15 +1,14 @@
-function request(postData, url){
+function postRequest(postData, url){
     console.log("function")
-    var xhttp = new XMLHttpRequest();
+    var xhttp = new XMLHttppostRequest();
     xhttp.onreadystatechange = function() {
-        console.log("make request");
-        console.log(this.readyState);
-        console.log(this.status);
+        console.log("make postRequest");
         if (this.readyState == 4 && this.status == 200) {
             console.log("made it");
             console.log(xhttp.responseText);
             if (xhttp.responseText != "") {
-                formatView(JSON.parse(xhttp.responseText));
+                displayDataPoints(JSON.parse(xhttp.responseText));
+                //check for return data? or use a get instead of a post
             }
             
         }
@@ -22,7 +21,7 @@ function request(postData, url){
       
   }
   
-  function updateView(){
+  function selectProgress(){
     let username = document.getElementById('username').value;   
     //let scheduleE = document.getElementById('scheduleSelect');
     //let schedule = scheduleE.options[scheduleE.selectedIndex].value;
@@ -30,10 +29,10 @@ function request(postData, url){
     let project = projectE.options[projectE.selectedIndex].value;
     let query = "username=" + username + "&project=" + project;
     console.log(query);
-    request(query, 'access_Progress_DB.php'); 
+    postRequest(query, 'DB_SelectAJAX.php'); 
   }
 
-  function formatView(response) {
+  function displayDataPoints(response) {
     table = "<table><tr><th>Title:</th><th>Description:</th><th>Date:</th><th>Attach1:</th><th>Attach2:</th><th>Attach3:</th></tr>";
     for (var i = 0; i < response.length; i++){
         table += `<tr>
@@ -51,7 +50,7 @@ function request(postData, url){
   }
 
 
-function postQuery() {
+function postUpdateQuery() {
     let query = '';
     let form = document.getElementById('updateForm');
     let inputs = form.getElementsByTagName('input');
@@ -59,6 +58,6 @@ function postQuery() {
         query += element.id + "=" + element.value + "&"; 
     }  
     query += "delete=false";
-    request(query, "updateProgress.php");
+    postRequest(query, "DB_updateAJAX.php");
 
 }

@@ -1,5 +1,5 @@
 <?php
-require 'accessDB.php';
+require '../accessDB.php';
 $db = getDB();
 foreach ($_POST as $key => $value){
   //echo $key . ": " . $value;

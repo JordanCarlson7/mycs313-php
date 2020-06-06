@@ -1,4 +1,4 @@
-function request(){
+/*function request(){
   console.log("function")
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -13,7 +13,7 @@ function request(){
       }
     };
     
-    xhttp.open("GET", "access_Progress_DB.php" , true);//open(method, url, async);
+    xhttp.open("GET", "DB_SelectAJAX.php" , true);//open(method, url, async);
     xhttp.send();
 
     
@@ -38,7 +38,7 @@ function format(jsonObj){
   table = "<table><tr><th>User:</th><th>Password:</th><th>Schedule:</th><th>Img:</th></tr>";
   for (var i = 0; i < theObj.length; i++){
 
-      /*remove extra quotations*/
+  
       dataPointArray = removeQuotes(theObj[i].data_point);
   
       console.log(dataPointArray);
@@ -57,3 +57,4 @@ function format(jsonObj){
 
   document.getElementById("table").innerHTML = table;
 }
+*/

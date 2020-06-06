@@ -22,7 +22,7 @@ if($profile){
   $loggedIn = true;
 }
 else {
-  header("Location: progressTrackerLogin.php");
+  header("Location: ptLogin.php");
   die();
 }
 
@@ -49,8 +49,8 @@ $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <title>Progress Tracker</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
   integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="progressTracker.css">
-  <script src="progressTracker.js"></script>
+  <link rel="stylesheet" type="text/css" href="pt.css">
+  <script src="pt.js"></script>
   <script src="updateTracker.js"></script>
   
 </head>
@@ -87,7 +87,7 @@ $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
       <label type="text" for="attach3">Attachment 3</label>
       <input name="attach3" id="attach3" value=""> 
     
-    <button type="button" id="updateButton" onclick="postQuery()">Add/Update settings</button>
+    <button type="button" id="updateButton" onclick="postUpdateQuery()">Add/Update settings</button>
     </form>
     <nav class="nav"> 
     <br><br>
@@ -97,7 +97,7 @@ $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
           <option value="<?=$project['project_id']?>"><?=$project['project_id']?></option>
         <?php endforeach; ?>
     </select>
-    <button type="button" onclick="updateView()">View</button>
+    <button type="button" onclick="selectProgress()">View</button>
     </nav>
 
     <table class="table table-dark table-striped">
@@ -122,7 +122,7 @@ $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <?php endforeach; ?>
         </tbody>
     </table>   
-    <button type="button" onclick="request()">AJAX IT!</button>
+    <button type="button" onclick="postRequest()">AJAX IT!</button>
     <div id="table"></div>
 
 </body>
