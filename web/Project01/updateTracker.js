@@ -1,6 +1,6 @@
 function postRequest(postData, url){
     console.log("function")
-    var xhttp = new XMLHttppostRequest();
+    var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         console.log("make postRequest");
         if (this.readyState == 4 && this.status == 200) {
@@ -33,20 +33,22 @@ function postRequest(postData, url){
   }
 
   function displayDataPoints(response) {
-    table = "<table><tr><th>Title:</th><th>Description:</th><th>Date:</th><th>Attach1:</th><th>Attach2:</th><th>Attach3:</th></tr>";
+    //table = "<table><tr><th>Title:</th><th>Description:</th><th>Date:</th><th>Attach1:</th><th>Attach2:</th><th>Attach3:</th></tr>";
+    let dataDiv = `
+    <div id="dataTimeline">`
+    
     for (var i = 0; i < response.length; i++){
-        table += `<tr>
-                    <td>${response[i].title}</td>
-                    <td>${response[i].description}</td>
-                    <td>${response[i].data_d}</td>
-                    <td><img src="${response[i].attach1}" alt="${response[i].attach1}"></td>
-                    <td><img src="${response[i].attach2}" alt="${response[i].attach2}"></td>
-                    <td><img src="${response[i].attach3}" alt="${response[i].attach3}"></td>
-                  </tr>
-                 `
+        dataDiv += 
+        `<div id="${response[i].title}" class="dataPoint">
+            <div class="dataHeader"><h3 class="left">${response[i].title}</h3><h3 class="right">${response[i].data_d}</h3></div>
+            <p>${response[i].description}</p>
+            <img src="../Photos${response[i].attach1}" alt="${response[i].attach1}">
+            <img src="../Photos${response[i].attach2}" alt="${response[i].attach2}">
+            <img src="../Photos${response[i].attach3}" alt="${response[i].attach3}">
+          </div>`
     }
-    table += "</table>"
-    document.getElementById("table").innerHTML = table;
+    dataDiv += `</div>`
+    document.getElementById("dataPointBars").innerHTML = dataDiv;
   }
 
 

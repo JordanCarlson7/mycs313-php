@@ -18,7 +18,7 @@
   }
   
 img{
-  max-width: 30%;
+  max-width: 10%;
   height: auto;
 }
 
@@ -41,7 +41,7 @@ img{
   grid-area: left;
   flex-direction: column;
   justify-content: space-evenly;
-  width: 33.33%;
+  width: 100%;
   height: auto;
   bottom:0;
   background: rgba(0, 0, 0, 0.5);
@@ -54,10 +54,17 @@ table{
 }
 
 h1{
-  position: fixed;
   grid-area: header;
   background: rgba(0, 0, 0, 0.5);
   color: #f1f1f1;
   padding: 20px;
+
+}
+
+#dataTimeline {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  margin: 5%;
 
 }

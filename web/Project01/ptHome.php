@@ -115,15 +115,16 @@ $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <tr>
               <td><strong><?= $project['user_name']?></strong></td>
               <td><strong><?= $project['schedule_id'] . ":"?></strong></td>
-              <td><strong><?= $project['project_id']?></strong></td>
+              <td><button type="button" onclick="display"><strong><?= $project['project_id']?></strong></td>
               <td><?= $project['start_d']?></td>
               <td><?= $project['end_d']?></td>
             </tr> 
             <?php endforeach; ?>
         </tbody>
     </table>   
-    <button type="button" onclick="postRequest()">AJAX IT!</button>
     <div id="table"></div>
-
+    <div id="dataPointBars">
+        
+    </div>          
 </body>
 </html>
