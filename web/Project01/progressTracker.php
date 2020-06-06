@@ -54,14 +54,11 @@ $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <script src="updateTracker.js"></script>
   
 </head>
-<body>
+<body class="mainBody">
     <h1>Progress Bar</h1>
     <form id="updateForm" action="" method="POST">
       
       <!--Header -->
-      <p>Instructions STEP01: Enter any data you wish into this form. When you click <code>ADD/UPDATE SETTINGS</code>
-      <br> It will update the database via ajax and you can retrieve it by following STEP 02.
-      <br>**At this point in design, all fields must be filled out**</p>
       <input type="text" id="username" value="<?= $username?>" name="username" style="display:none">
       <label for="schedule">Schedule Name: </label>
       <input type="text" id="schedule"name="schedule" value="">
@@ -92,11 +89,9 @@ $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
     <button type="button" id="updateButton" onclick="postQuery()">Add/Update settings</button>
     </form>
-    <p>BEFORE STEP 02, remember the <code>project name</code> you input in the form. When you <b>refresh</b> the page you will be able to select that project in the project drop down menu below</p>
-    <br>
     <nav class="nav"> 
     <br><br>
-    <label for="projectSelect" style="background-color:red">Project: ( STEP 02: Select the project name you entered above, click VIEW to see your data displayed at bottom of the page)</label>
+    <label for="projectSelect" style="background-color:red"></label>
     <select name="projectSelect" id="projectSelect">
         <?php foreach($projects as $project): ?>
           <option value="<?=$project['project_id']?>"><?=$project['project_id']?></option>

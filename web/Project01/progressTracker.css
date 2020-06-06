@@ -1,38 +1,63 @@
-#backgroundVideo {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: auto;
-  }
-  
-
-img{
-    max-width: 30%;
-    height: auto;
+.mainBody {
+  display: grid;
+  grid-template-areas: 
+  'header header header header header'
+  'left main main main main'
+  'left main main main main'
+  'leftb mainb mainb mainb mainb'
+  'leftb mainb mainb mainb mainb'
+  'footer footer footer footer footer';
 }
 
-form{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    width: 33.33%;
-    height: auto;
-    margin: 33.33%;
-    position: fixed;
-    bottom:0;
-    background: rgba(0, 0, 0, 0.5);
-    color: #f1f1f1;
-     padding: 20px;
+#backgroundVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  }
+  
+img{
+  max-width: 30%;
+  height: auto;
+}
 
+#logIn{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 33.33%;
+  height: auto;
+  margin: 33.33%;
+  position: fixed;
+  bottom:0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  padding: 20px;
+}
+
+#updateForm{
+  display: flex;
+  grid-area: left;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 33.33%;
+  height: auto;
+  bottom:0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  padding: 20px;
+}
+
+table{
+  grid-area: main;
 }
 
 h1{
   position: fixed;
- 
-     background: rgba(0, 0, 0, 0.5);
-     color: #f1f1f1;
-  
-     padding: 20px;
+  grid-area: header;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  padding: 20px;
 
 }

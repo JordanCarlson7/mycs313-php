@@ -14,9 +14,9 @@
 <body>
   <h1>Log in</h1>
   <video autoplay muted loop id="backgroundVideo">
-    <source src="earthSunRotate.mp4" type="video/mp4">
+    <source src="../videos/earthSunRotate.mp4" type="video/mp4">
   </video>
-  <form action="progressTracker.php" method="POST">
+  <form id="logIn" action="progressTracker.php" method="POST">
     <label for="username">Username: (enter TEST_USER)</label>
     <input type="text" value="" name="username" id="username" placeholder="User">
     <label for="password">Password: (enter TEST_PASSWORD)</label>
