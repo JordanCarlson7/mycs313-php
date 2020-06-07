@@ -12,14 +12,14 @@
 </head>
 
 <body>
-  <h1>Log in</h1>
+  <h1>New Log in</h1>
   <video autoplay muted loop id="backgroundVideo">
     <source src="../Photos/earthSunRotate.mp4" type="video/mp4">
   </video>
   <form action="DB_newProfile.php" id="logIn" method="POST">
     <label for="username">New Username: </label>
     <input type="text" value="" name="username" id="username" placeholder="User">
-    <label for="password">New Password: (Must be at least 7 characters with 1 number)</label>
+    <label for="password">New Password: </label>
     <input type="text" value="" name="password" id="password" placeholder="Password">
     <input type="submit">
     <button type="reset">Reset</button>
