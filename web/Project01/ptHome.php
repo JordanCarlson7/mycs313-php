@@ -48,7 +48,10 @@ $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
 if(!$projects['schedule_id']){
+ 
   $schedule = "default";
+  var_dump($schedule);
+  die();
   $stmt1 = $db->prepare('INSERT INTO schedules (user_name, schedule_id) VALUES (:username, :schedule)');
   $stmt1->bindValue(':username', $username, PDO::PARAM_STR);
   $stmt1->bindValue(':schedule', $schedule, PDO::PARAM_STR);
