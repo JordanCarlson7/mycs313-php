@@ -6,13 +6,9 @@ $db = getDB();
   foreach($_POST as $key => $value){
       //echo $key . ": " . $value;
   }
-  if ($_POST['schedule'] != ""){
-    newSchedule($db);
-  }
   if ($_POST['project'] != ""){
     newProject($db);
   }
-
   if($_POST['title'] != ""){
     if ($_POST['project'] != ""){
       $project = htmlspecialchars($_POST['project']);
@@ -27,17 +23,6 @@ $db = getDB();
     }
   }
   
-
-  function newSchedule($db){
-  $username = htmlspecialchars($_POST['username']);
-  $schedule = htmlspecialchars($_POST['schedule']);
-
-  $stmt = $db->prepare('INSERT INTO schedules (user_name, schedule_id) VALUES (:username, :schedule)');
-  $stmt->bindValue(':username', $username, PDO::PARAM_STR);
-  $stmt->bindValue(':schedule', $schedule, PDO::PARAM_STR);
-  $stmt->execute();
-  }
-
   function newProject($db){
   $username = htmlspecialchars($_POST['username']);
   $schedule = htmlspecialchars($_POST['schedule']);
