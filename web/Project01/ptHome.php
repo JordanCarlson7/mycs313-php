@@ -5,18 +5,20 @@ $db = getDB();
 // $searchTerm = filter_var(INPUT_GET, 'search', FILTER_SANITIZE_STRING);\
 if (isset($_POST['username'])) {
   $username = htmlspecialchars($_POST['username']);
-  $password = password_hash(htmlspecialchars($_POST['password']), PASSWORD_DEFAULT);
+}
+if (isset($_POST['password'])){
+  $password = $_POST['password'];
 }
 
 //check in database for profile
-$stmt = $db->prepare('SELECT user_name, password FROM profiles WHERE profiles.user_name = :user_name AND profiles.password = :password');
+$stmt = $db->prepare('SELECT * FROM profiles WHERE profiles.user_name = :user_name');
 $stmt->bindValue(':user_name', $username, PDO::PARAM_STR);
-$stmt->bindValue(':password', $password, PDO::PARAM_STR);
-
 $stmt->execute();
 $profile = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-if($profile){
+$passwordVerified = password_verify($password, $profile['password']);
+
+if($passwordVerified){
   $loggedIn = true;
 }
 else {
