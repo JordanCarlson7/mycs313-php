@@ -11,13 +11,14 @@ if (isset($_POST['password'])){
 }
 
 //check in database for profile
-$stmt = $db->prepare('SELECT * FROM profiles WHERE profiles.user_name = :user_name');
+$stmt = $db->prepare('SELECT * FROM profiles WHERE profiles.user_name = :user_name AND profiles.password = :password');
 $stmt->bindValue(':user_name', $username, PDO::PARAM_STR);
+$stmt->bindValue(':password', $password, PDO::PARAM_STR);
 $stmt->execute();
 $profile = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-$passwordVerified = password_verify($password, $profile['password']);
-
+//$passwordVerified = password_verify($password, $profile['password']);
+/*
 if($passwordVerified){
   $loggedIn = true;
 }
@@ -26,7 +27,7 @@ else {
  // header("Location: ptLogin.php");
   die();
 }
-
+*/
 //GET PROFILE DATA
 if (!$loggedIn) {
   $stmt = $db->prepare('');

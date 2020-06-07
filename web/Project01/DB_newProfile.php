@@ -3,7 +3,7 @@
     $db = getDB();
 
     $username = htmlspecialchars($_POST['username']);
-    $password = password_hash(htmlspecialchars($_POST['password']), PASSWORD_DEFAULT);
+    $password = htmlspecialchars($_POST['password']);
 
    $stmt = $db->prepare('INSERT INTO profiles (user_name, password) VALUES (:username, :password)');
    $stmt->bindValue(':username',$username,PDO::PARAM_STR);
