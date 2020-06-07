@@ -14,7 +14,7 @@
 <body>
   <h1>Log in</h1>
   <video autoplay muted loop id="backgroundVideo">
-    <source src="earthSunRotate.mp4" type="video/mp4">
+    <source src="../earthSunRotate.mp4" type="video/mp4">
   </video>
   <form action="DB_newProfile.php" method="POST">
     <label for="username">New Username: </label>
