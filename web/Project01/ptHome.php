@@ -124,13 +124,12 @@ $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
     <nav class="nav"> 
     <br><br>
-    <label for="projectSelect" style="background-color:red"></label>
+    <label for="projectSelect" style="background-color:red">Select Project: </label>
     <select name="projectSelect" id="projectSelect">
         <?php foreach($projects as $project): ?>
           <option value="<?=$project['project_id']?>"><?=$project['project_id']?></option>
         <?php endforeach; ?>
     </select>
-    <label for="projectSelect">Select Project: </label>
     <button type="button" id="projectSelect" onclick="selectProgress()">View</button>
     </nav>
 
