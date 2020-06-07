@@ -4,10 +4,10 @@ $db = getDB();
 
 // $searchTerm = filter_var(INPUT_GET, 'search', FILTER_SANITIZE_STRING);\
 if (isset($_POST['username'])) {
-  $username = $_POST['username'];
+  $username = htmlspecialchars($_POST['username']);
 }
 if (isset($_POST['password'])) {
-  $password = $_POST['password'];
+  $password = password_hash(htmlspecialchars($_POST['password']), PASSWORD_DEFAULT);
 }
 
 //check in database for profile
