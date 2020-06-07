@@ -17,6 +17,9 @@ $stmt->bindValue(':password', $password, PDO::PARAM_STR);
 $stmt->execute();
 $profile = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+if ($profile) {
+  $loggedIn = true;
+}
 //$passwordVerified = password_verify($password, $profile['password']);
 /*
 if($passwordVerified){
