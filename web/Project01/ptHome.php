@@ -67,6 +67,8 @@ $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
       <input type="text" id="username" value="<?= $username?>" name="username" style="display:none">
       <label for="schedule">Schedule Name: </label>
       <input type="text" id="schedule"name="schedule" value="">
+      
+      <br>
       <label for="project">Project Name: </label>
       <input type="text" id="project" name="project" value="">
       <label for="desc_proj">Project Description: </label>
@@ -79,7 +81,8 @@ $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
       <input type="date" id="endDate" name="endDate" value="">
 
       <!--Data Point-->
-      <label for="title">Name: </label>
+      <br>
+      <label for="title">Milestone Title: </label>
       <input type="text" name="title" id="title" value=""> 
       <label for="description">Description: </label>
       <input type="text" name="description_data" id="description_data"> 
