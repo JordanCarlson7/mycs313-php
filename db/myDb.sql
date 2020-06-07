@@ -30,7 +30,7 @@ CREATE TABLE profiles (
 CREATE TABLE schedules (
     id SERIAL NOT NULL,
     user_name VARCHAR(255) NOT NULL REFERENCES profiles(user_name),
-    schedule_id VARCHAR(255) NOT NULL UNIQUE PRIMARY KEY
+    schedule_id VARCHAR(255) NOT NULL PRIMARY KEY
 );
 
 --Create Projects table--
