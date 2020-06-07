@@ -10,7 +10,6 @@
    $stmt->bindValue(':password', $password, PDO::PARAM_STR);
    $stmt->execute();
 
-   header('Location ptLogin.php');
-   die();
+   header('Location: ptLogin.php');
 
 ?>
