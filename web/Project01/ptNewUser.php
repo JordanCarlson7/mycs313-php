@@ -16,7 +16,7 @@
   <video autoplay muted loop id="backgroundVideo">
     <source src="../earthSunRotate.mp4" type="video/mp4">
   </video>
-  <form action="DB_newProfile.php" method="POST">
+  <form action="DB_newProfile.php" id="logIn" method="POST">
     <label for="username">New Username: </label>
     <input type="text" value="" name="username" id="username" placeholder="User">
     <label for="password">New Password: (Must be at least 7 characters with 1 number)</label>
