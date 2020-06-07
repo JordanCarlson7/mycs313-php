@@ -20,6 +20,7 @@ if($profile){
   $loggedIn = true;
 }
 else {
+  var_dump($profile);
  // header("Location: ptLogin.php");
   die();
 }
