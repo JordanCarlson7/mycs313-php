@@ -58,11 +58,12 @@ $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <h1>Progress Bar</h1>
     <form id="updateForm" action="" method="POST">
       <h3>Add New Project w/1 Data Point</h3>
+      
       <!--Header -->
       <input type="text" id="username" value="<?= $username?>" name="username" style="display:none">
       <label for="schedule">Schedule Name: </label>
       <input type="text" id="schedule"name="schedule" value="">
-      <label for="project" style="background-color:red">Project Name: </label>
+      <label for="project">Project Name: </label>
       <input type="text" id="project" name="project" value="">
       <label for="desc_proj">Project Description: </label>
       <input name="description" id="description_project" value="" placeholder="Description..."></textarea>
@@ -81,11 +82,11 @@ $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
       <label for="data_d">Date: </label>
       <input type="date" name="data_d" id="data_d" value="">
       <label type="text" for="attach1">Attachment 1</label>
-      <input name="attach1" id="attach1" value="">
+      <input name="attach1" id="attach1" value="TEST2.JPG">
       <label type="text" for="attach2">Attachment 2</label>
-      <input name="attach2" id="attach2" value="">
+      <input name="attach2" id="attach2" value="TEST3.JPG">
       <label type="text" for="attach3">Attachment 3</label>
-      <input name="attach3" id="attach3" value=""> 
+      <input name="attach3" id="attach3" value="TEST1.JPG"> 
     
     <button type="button" id="updateButton" onclick="postUpdateQuery(this.id)">Add/Update settings</button>
     </form>
@@ -136,11 +137,11 @@ $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
       <label for="data_d">Date: </label>
       <input type="date" name="data_d" id="data_dp" value="">
       <label type="text" for="attach1">Attachment 1</label>
-      <input name="attach1" id="attach1p" value="">
+      <input name="attach1" id="attach1p" value="TEST1.JPG">
       <label type="text" for="attach2p">Attachment 2</label>
-      <input name="attach2" id="attach2p" value="">
+      <input name="attach2" id="attach2p" value="TEST2.JPG">
       <label type="text" for="attach3">Attachment 3</label>
-      <input name="attach3" id="attach3p" value=""> 
+      <input name="attach3" id="attach3p" value="TEST3.JPG"> 
     
     <button type="button" id="updateDataPoints" onclick="postSingleUpdateQuery(this.id)">Add/Update settings</button>
     </form>

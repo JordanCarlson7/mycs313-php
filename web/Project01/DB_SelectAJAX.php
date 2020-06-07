@@ -5,9 +5,9 @@ foreach ($_POST as $key => $value){
   //echo $key . ": " . $value;
 }
 
-$username = $_POST['username'];
+$username = htmlspecialchars($_POST['username']);
 //$schedule = $_POST['schedule'];
-$project = $_POST['project'];
+$project = htmlspecialchars($_POST['project']);
 
 $stmt = $db->prepare('SELECT * FROM data_points INNER JOIN projects ON data_points.project_id = projects.project_id WHERE projects.user_name = :username AND projects.project_id = :project_id');
 

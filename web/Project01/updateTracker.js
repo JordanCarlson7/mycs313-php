@@ -45,7 +45,7 @@ function postRequest(postData, url){
             <img src="../Photos/${response[i].attach1}" alt="${response[i].attach1}">
             <img src="../Photos/${response[i].attach2}" alt="${response[i].attach2}">
             <img src="../Photos/${response[i].attach3}" alt="${response[i].attach3}">
-            <button type="button" id="${response[i].title}" onclick="removeItem(this.id)">-</button>
+            <button type="button" id="${response[i].title}" onclick="removeItem(this.id)">DEL</button>
           </div>`
     }
     dataDiv += `</div>`
@@ -82,7 +82,6 @@ function postSingleUpdateQuery(child) {
   query += "delete=false";
   postRequest(query, "DB_singleDataAJAX.php");
   selectProgress();
-
 }
 
 function removeItem(elementId){

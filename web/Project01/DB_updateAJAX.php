@@ -6,31 +6,31 @@ $db = getDB();
   foreach($_POST as $key => $value){
       //echo $key . ": " . $value;
   }
-
   if ($_POST['schedule'] != ""){
     newSchedule($db);
   }
   if ($_POST['project'] != ""){
     newProject($db);
   }
+
   if($_POST['title'] != ""){
     if ($_POST['project'] != ""){
-      $project = $_POST['project'];
-      $username = $_POST['username'];
-      $title = $_POST['title'];
-      $description_dataPoint = $_POST['description_data'];
-      $data_d = $_POST['data_d'];
-      $attach1 = $_POST['attach1'];
-      $attach2 = $_POST['attach2'];
-      $attach3 = $_POST['attach3'];
+      $project = htmlspecialchars($_POST['project']);
+      $username = htmlspecialchars($_POST['username']);
+      $title = htmlspecialchars($_POST['title']);
+      $description_dataPoint = htmlspecialchars($_POST['description_data']);
+      $data_d = htmlspecialchars($_POST['data_d']);
+      $attach1 = htmlspecialchars($_POST['attach1']);
+      $attach2 = htmlspecialchars($_POST['attach2']);
+      $attach3 = htmlspecialchars($_POST['attach3']);
       newData($db, $project, $username, $title, $description_dataPoint, $data_d, $attach1, $attach2, $attach3);
     }
   }
   
 
   function newSchedule($db){
-  $username = $_POST['username'];
-  $schedule = $_POST['schedule'];
+  $username = htmlspecialchars($_POST['username']);
+  $schedule = htmlspecialchars($_POST['schedule']);
 
   $stmt = $db->prepare('INSERT INTO schedules (user_name, schedule_id) VALUES (:username, :schedule)');
   $stmt->bindValue(':username', $username, PDO::PARAM_STR);
@@ -39,12 +39,12 @@ $db = getDB();
   }
 
   function newProject($db){
-  $username = $_POST['username'];
-  $schedule = $_POST['schedule'];
-  $project = $_POST['project'];
-  $description_project = $_POST['description_project'];
-  $startDate = $_POST['startDate'];
-  $endDate = $_POST['endDate'];
+  $username = htmlspecialchars($_POST['username']);
+  $schedule = htmlspecialchars($_POST['schedule']);
+  $project = htmlspecialchars($_POST['project']);
+  $description_project = htmlspecialchars($_POST['description_project']);
+  $startDate = htmlspecialchars($_POST['startDate']);
+  $endDate = htmlspecialchars($_POST['endDate']);
 
   $stmt1 = $db->prepare('INSERT INTO projects (user_name, schedule_id, project_id, description, start_d, end_d) VALUES (:username, :schedule, :project, :description_project, :timelineStart, :timelineEnd)');
   $stmt1->bindValue(':username', $username, PDO::PARAM_STR);

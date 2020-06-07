@@ -14,7 +14,7 @@
 <body>
   <h1>Log in</h1>
   <video autoplay muted loop id="backgroundVideo">
-    <source src="../videos/earthSunRotate.mp4" type="video/mp4">
+    <source src="../Photos/earthSunRotate.mp4" type="video/mp4">
   </video>
   <form id="logIn" action="ptHome.php" method="POST">
     <label for="username">Username: (enter TEST_USER)</label>

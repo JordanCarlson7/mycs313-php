@@ -10,14 +10,14 @@ $db = getDB();
 
   if (isset($_POST['titlep'])) {
     if (isset($_POST['projectp'])){
-        $project = $_POST['projectp'];
-        $username = $_POST['usernamep'];
-        $title = $_POST['titlep'];
-        $description_dataPoint = $_POST['description_datap'];
-        $data_d = $_POST['data_dp'];
-        $attach1 = $_POST['attach1p'];
-        $attach2 = $_POST['attach2p'];
-        $attach3 = $_POST['attach3p'];
+        $project = htmlspecialchars($_POST['projectp']);
+        $username = htmlspecialchars($_POST['usernamep']);
+        $title =htmlspecialchars($_POST['titlep']);
+        $description_dataPoint = htmlspecialchars($_POST['description_datap']);
+        $data_d = htmlspecialchars($_POST['data_dp']);
+        $attach1 = htmlspecialchars($_POST['attach1p']);
+        $attach2 = htmlspecialchars($_POST['attach2p']);
+        $attach3 = htmlspecialchars($_POST['attach3p']);
       }
       newData($db, $project, $username, $title, $description_dataPoint, $data_d, $attach1, $attach2, $attach3);
   }
@@ -36,8 +36,8 @@ $db = getDB();
     }
   
     function deleteDataPoint($db){
-    $username = $_POST['username'];
-    $dataPointDelete = $_POST['dataPointDelete'];
+    $username =$_POST['username'] ;
+    $dataPointDelete =$_POST['dataPointDelete'] ;
   
     $stmt3 = $db->prepare('DELETE FROM data_points WHERE user_name = :username AND title = :dataTitle');
     $stmt3->bindValue(':username', $username, PDO::PARAM_STR);
