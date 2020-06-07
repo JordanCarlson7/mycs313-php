@@ -20,7 +20,7 @@ if($profile){
   $loggedIn = true;
 }
 else {
-  header("Location: ptLogin.php");
+ // header("Location: ptLogin.php");
   die();
 }
 
