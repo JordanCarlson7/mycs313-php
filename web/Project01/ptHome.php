@@ -5,8 +5,6 @@ $db = getDB();
 // $searchTerm = filter_var(INPUT_GET, 'search', FILTER_SANITIZE_STRING);\
 if (isset($_POST['username'])) {
   $username = htmlspecialchars($_POST['username']);
-}
-if (isset($_POST['password'])) {
   $password = password_hash(htmlspecialchars($_POST['password']), PASSWORD_DEFAULT);
 }
 
@@ -38,7 +36,6 @@ else {
 
 $stmt->execute();
 $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
 ?>
 
 <!DOCTYPE html>
@@ -52,8 +49,8 @@ $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <link rel="stylesheet" type="text/css" href="pt.css">
   <script src="pt.js"></script>
   <script src="updateTracker.js"></script>
-  
 </head>
+
 <body class="mainBody">
     <h1>Progress Bar</h1>
     <form id="updateForm" action="" method="POST">
