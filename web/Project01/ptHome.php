@@ -64,11 +64,9 @@ $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
       <h3>Add New Project w/1 Data Point</h3>
       
       <!--Header -->
-      <input type="text" id="username" value="<?= $username?>" name="username" style="display:none">
-      <label for="schedule">Schedule Name: </label>
-      <input type="text" id="schedule"name="schedule" value="">
+      <input type="text" id="username" value="<?= $username?>" name="username" style="display:none"> 
+      <input type="text" id="schedule"name="schedule" value="default" style="display:none">
       
-      <br>
       <label for="project">Project Name: </label>
       <input type="text" id="project" name="project" value="">
       <label for="desc_proj">Project Description: </label>
@@ -102,7 +100,6 @@ $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <thead>
           <tr>
             <th scope="col">USER</th>
-            <th scope="col">SCHEDULE</th>
             <th scope="col">PROJECT</th>
             <th scope="col">START</th>
             <th scope="col">FINISH</th>
@@ -112,7 +109,7 @@ $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <?php foreach($projects as $project):?>
                 <tr>
               <td><strong><?= $project['user_name']?></strong></td>
-              <td><strong><?= $project['schedule_id'] . ":"?></strong></td>
+              
               <td><strong><?= $project['project_id']?></strong></td>
               <td><?= $project['start_d']?></td>
               <td><?= $project['end_d']?></td>
