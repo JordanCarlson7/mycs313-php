@@ -10,8 +10,6 @@
    $stmt->bindValue(':password', $password, PDO::PARAM_STR);
    $stmt->execute();
 
-
-   
    $schedule = "default";
  
    $stmt1 = $db->prepare('INSERT INTO schedules (user_name, schedule_id) VALUES (:username, :schedule)');
@@ -19,7 +17,6 @@
    $stmt1->bindValue(':schedule', $schedule, PDO::PARAM_STR);
    $stmt1->execute();
    
-
    header('Location: ptLogin.php');
 
 ?>
